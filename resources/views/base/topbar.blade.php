@@ -2,7 +2,7 @@
 <div class="navbar-custom">
     <ul class="list-unstyled topnav-menu float-right mb-0">
 
-        <li class="dropdown notification-list">
+        {{-- <li class="dropdown notification-list">
             <a class="nav-link dropdown-toggle  waves-effect" data-toggle="dropdown" href="#" role="button"
                 aria-haspopup="false" aria-expanded="false">
                 <i class="mdi mdi-bell noti-icon"></i>
@@ -82,7 +82,7 @@
                 </a>
 
             </div>
-        </li>
+        </li> --}}
 
         <li class="dropdown notification-list">
             <a class="nav-link dropdown-toggle  waves-effect" data-toggle="dropdown" href="#" role="button"
@@ -213,11 +213,11 @@
             </div>
         </li>
 
-        <li class="dropdown notification-list">
+        {{-- <li class="dropdown notification-list">
             <a href="javascript:void(0);" class="nav-link right-bar-toggle waves-effect">
                 <i class="mdi mdi-settings noti-icon"></i>
             </a>
-        </li>
+        </li> --}}
 
     </ul>
 
@@ -257,39 +257,24 @@
             </form>
         </li>
 
-        <li class="d-none d-lg-block">
-            <a href="#" class="nav-link">New</a>
-        </li>
-
         <li class="dropdown d-none d-lg-block">
             <a class="nav-link dropdown-toggle mr-0 waves-effect" data-toggle="dropdown" href="#" role="button"
                 aria-haspopup="false" aria-expanded="false">
-                <img src="assets/images/flags/us.jpg" alt="user-image" class="mr-1" height="12"> <span
-                    class="align-middle">English <i class="mdi mdi-chevron-down"></i> </span>
+                <span class="align-middle">
+                    <i class=" mdi mdi-plus-box-multiple-outline"></i>
+                    <i class="mdi mdi-chevron-down"></i> </span>
             </a>
             <div class="dropdown-menu">
                 <!-- item-->
                 <a href="javascript:void(0);" class="dropdown-item notify-item">
-                    <img src="assets/images/flags/germany.jpg" alt="user-image" class="mr-1" height="12"> <span
-                        class="align-middle">German</span>
+                    <i class="mdi mdi-shield-star-outline"></i>
+                    <span> New Rating</span>
                 </a>
 
                 <!-- item-->
                 <a href="javascript:void(0);" class="dropdown-item notify-item">
-                    <img src="assets/images/flags/italy.jpg" alt="user-image" class="mr-1" height="12"> <span
-                        class="align-middle">Italian</span>
-                </a>
-
-                <!-- item-->
-                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                    <img src="assets/images/flags/spain.jpg" alt="user-image" class="mr-1" height="12"> <span
-                        class="align-middle">Spanish</span>
-                </a>
-
-                <!-- item-->
-                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                    <img src="assets/images/flags/russia.jpg" alt="user-image" class="mr-1" height="12"> <span
-                        class="align-middle">Russian</span>
+                    <i class="mdi mdi-shield-home-outline"></i>
+                    <span> New Organization</span>
                 </a>
 
             </div>

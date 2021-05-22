@@ -19,7 +19,7 @@
         {{-- @include('base.footer') --}}
     </div>
 
-    <div class="right-bar">
+    {{-- <div class="right-bar">
         <div class="rightbar-title">
             <a href="javascript:void(0);" class="right-bar-toggle float-right">
                 <i class="mdi mdi-close"></i>
@@ -44,7 +44,7 @@
 
             </div>
         </div> <!-- end slimscroll-menu-->
-    </div>
+    </div> --}}
 
     <!-- Right bar overlay-->
     <div class="rightbar-overlay"></div>
