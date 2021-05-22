@@ -182,6 +182,19 @@
                     <i class="mdi mdi-settings-outline"></i>
                     <span>Settings</span>
                 </a>
+                <div class="dropdown-divider"></div>
+
+                <!-- item-->
+                <a id="light-mode-switcher" href="javascript:void(0);" class="dropdown-item notify-item">
+                    <i class="mdi mdi-brightness-5"></i>
+                    <span>Light Mode</span>
+                </a>
+                <!-- item-->
+                <a id="dark-mode-switcher" href="javascript:void(0);" class="dropdown-item notify-item"
+                    data-bsStyle="assets/css/bootstrap-dark.min.css" data-appStyle="assets/css/app-dark.min.css">
+                    <i class="mdi mdi-brightness-3"></i>
+                    <span>Dark Mode</span>
+                </a>
 
                 <!-- item-->
                 <a href="javascript:void(0);" class="dropdown-item notify-item">
@@ -212,12 +225,12 @@
     <div class="logo-box">
         <a href="index.html" class="logo text-center">
             <span class="logo-lg">
-                <img src="assets/images/logo-light.png" alt="" height="18">
-                <!-- <span class="logo-lg-text-light">Zircos</span> -->
+                <!-- <img src="assets/images/logo-light.png" alt="" height="18"> -->
+                <span class="logo-lg-text-light">Rating.Land</span>
             </span>
             <span class="logo-sm">
-                <!-- <span class="logo-sm-text-dark">Z</span> -->
-                <img src="assets/images/logo-sm.png" alt="" height="24">
+                <span class="logo-sm-text-dark">R</span>
+                <!-- <img src="assets/images/logo-sm.png" alt="" height="24"> -->
             </span>
         </a>
     </div>

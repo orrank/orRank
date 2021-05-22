@@ -272,10 +272,10 @@
         <div class="help-box">
             <h5 class="text-muted mt-0">For Help ?</h5>
             <p class=""><span class="text-info">Email:</span>
-                <br /> support@support.com
+                <br /> support@gitleaf.com
             </p>
             <p class="mb-0"><span class="text-info">Call:</span>
-                <br /> (+123) 123 456 789
+                <br /> (+94) 123 456 789
             </p>
         </div>
 
