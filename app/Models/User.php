@@ -30,6 +30,7 @@ class User extends Authenticatable
         'email',
         'provider',
         'bio',
+        'mobile',
         'location',
         'company',
         'website',
