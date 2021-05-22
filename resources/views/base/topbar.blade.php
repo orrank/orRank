@@ -162,13 +162,15 @@
         <li class="dropdown notification-list">
             <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect" data-toggle="dropdown" href="#" role="button"
                 aria-haspopup="false" aria-expanded="false">
-                <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
-                <span class="d-none d-sm-inline-block ml-1">Alex M.</span>
+                <img src="{{ asset('assets/images/users/avatar-1.jpg') }}" alt="user-image" class="rounded-circle">
+                <span class="d-none d-sm-inline-block ml-1"></span>
             </a>
             <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                 <!-- item-->
                 <div class="dropdown-header noti-title">
-                    <h6 class="text-overflow m-0">Welcome !</h6>
+                    <a href="javascript:void(0);">
+                        <h6 class="text-overflow m-0"> <small>Signed in as</small><br> {{ Auth::user()->name }}</h6>
+                    </a>
                 </div>
 
                 <!-- item-->
@@ -191,7 +193,8 @@
                 </a>
                 <!-- item-->
                 <a id="dark-mode-switcher" href="javascript:void(0);" class="dropdown-item notify-item"
-                    data-bsStyle="assets/css/bootstrap-dark.min.css" data-appStyle="assets/css/app-dark.min.css">
+                    data-bsStyle="{{ asset('assets/css/bootstrap-dark.min.css') }}"
+                    data-appStyle="{{ asset('assets/css/app-dark.min.css') }}">
                     <i class="mdi mdi-brightness-3"></i>
                     <span>Dark Mode</span>
                 </a>
@@ -205,10 +208,15 @@
                 <div class="dropdown-divider"></div>
 
                 <!-- item-->
-                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                    <i class="mdi mdi-logout-variant"></i>
-                    <span>Logout</span>
-                </a>
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                       this.closest('form').submit();" class="dropdown-item notify-item">
+                        <i class="mdi mdi-logout-variant"></i>
+                        <span>Logout</span>
+                    </a>
+                    <!-- Authentication -->
+                </form>
 
             </div>
         </li>

@@ -1,4 +1,4 @@
-@extends('layouts.dashboard')
+@extends('layouts.default')
 @section('content')
     <div>
         Hello Earth
