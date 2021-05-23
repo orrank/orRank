@@ -1,8 +1,12 @@
 <div class="navbar-custom">
     <ul class="list-unstyled topnav-menu float-right mb-0">
-
-        <li>
-            <a style="margin-top: 15px;" href="/login" class="btn btn-info btn-sm">
+        <li style="margin: 5px;">
+            <a style="margin-top: 15px;" href="/register" class="btn btn-dark btn-rounded">
+                <small>Register</small>
+            </a>
+        </li>
+        <li  style="margin: 5px;">
+            <a style="margin-top: 15px;" href="/login" class="btn btn-dark btn-rounded">
                 <small>Login</small>
             </a>
         </li>
