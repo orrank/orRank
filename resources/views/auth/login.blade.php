@@ -29,7 +29,7 @@
                             <div class="form-group">
                                 <div class="custom-control custom-checkbox checkbox-info">
                                     <input type="checkbox" class="custom-control-input" id="remember_me" name="remember">
-                                    <label class="custom-control-label" for="checkbox-signin">Remember me</label>
+                                    <label class="custom-control-label" for="remember_me">Remember me</label>
                                 </div>
                             </div>
 
@@ -58,11 +58,12 @@
                     <!-- end card-body -->
                 </div>
                 <!-- end card -->
+                <x-jet-validation-errors />
 
                 <div class="row mt-5">
                     <div class="col-sm-12 text-center">
-                        <p class="text-muted">Don't have an account? <a href="page-register.html"
-                                class="text-primary ml-1"><b>Sign Up</b></a></p>
+                        <p class="text-muted">Don't have an account? <a href="/register" class="text-primary ml-1"><b>Sign
+                                    Up</b></a></p>
                     </div>
                 </div>
 

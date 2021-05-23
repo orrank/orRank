@@ -1,34 +1,56 @@
-<x-guest-layout>
-    <x-jet-authentication-card>
-        <x-slot name="logo">
-            <x-jet-authentication-card-logo />
-        </x-slot>
+@extends('layouts.default')
+@section('content')
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6 col-xl-5">
+                <div class="card" style="margin-top: 100px;">
 
-        <div class="mb-4 text-sm text-gray-600">
-            {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+                    <div class="text-center account-logo-box">
+                        <div class="mt-2 mb-2">
+                            <a href="index.html" class="text-success">
+                                <span><img src="assets/images/logo.png" alt="" height="36"></span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+
+                        <div class="text-center mb-4">
+                            <p class="text-muted mb-0">Enter your email address and we'll send you an email with
+                                instructions to reset your password. </p>
+                        </div>
+
+                        <form method="POST" action="{{ route('password.email') }}">
+                            @csrf
+                            <div class="form-group row">
+                                <div class="col-12">
+                                    <input class="form-control" type="email" name="email" :value="old('email')" required
+                                        autofocus>
+                                </div>
+                            </div>
+
+                            <div class="form-group account-btn text-center mt-2 row">
+                                <div class="col-12">
+                                    <button class="btn width-md btn-bordered btn-danger waves-effect waves-light"
+                                        type="submit">Send Email
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        <x-jet-validation-errors class="mb-4" />
+                    </div>
+                    <!-- end card-body -->
+                </div>
+                <!-- end card -->
+                <div class="row mt-5">
+                    <div class="col-sm-12 text-center">
+                        <p class="text-muted">Already have account?<a href="/login" class="text-primary ml-1"><b>Sign
+                                    In</b></a></p>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        @if (session('status'))
-            <div class="mb-4 font-medium text-sm text-green-600">
-                {{ session('status') }}
-            </div>
-        @endif
-
-        <x-jet-validation-errors class="mb-4" />
-
-        <form method="POST" action="{{ route('password.email') }}">
-            @csrf
-
-            <div class="block">
-                <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <x-jet-button>
-                    {{ __('Email Password Reset Link') }}
-                </x-jet-button>
-            </div>
-        </form>
-    </x-jet-authentication-card>
-</x-guest-layout>
+        <!-- end col -->
+    </div>
+    <!-- end row -->
+@stop
