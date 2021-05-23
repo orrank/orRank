@@ -65,7 +65,7 @@ return [
 
     'home' => function(){
         //if you want to go to a specific route
-        return Auth::user()->name . '/dashboard';
+        return Auth::user()->username . '/dashboard';
       
         //or if you have a bunch of redirection options
         // if (Auth::user()->hasRole('admin')) {

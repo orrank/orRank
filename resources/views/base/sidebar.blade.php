@@ -11,7 +11,7 @@
                 <li class="menu-title">Navigation</li>
 
                 <li>
-                    <a href="{{'/'. Auth::user()->name. '/dashboard/'}}">
+                    <a href="{{'/'. Auth::user()->username. '/dashboard/'}}">
                         <i class="mdi mdi-view-dashboard"></i>
                         <span class="badge badge-success badge-pill float-right">2</span>
                         <span> Dashboard </span>

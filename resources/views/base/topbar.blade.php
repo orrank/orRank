@@ -168,8 +168,9 @@
             <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                 <!-- item-->
                 <div class="dropdown-header noti-title">
-                    <a href="javascript:void(0);">
-                        <h6 class="text-overflow m-0"> <small>Signed in as</small><br> {{ Auth::user()->name }}</h6>
+                    <a href="{{ '/' . Auth::user()->username . '/dashboard/' }}">
+                        <h6 class="text-overflow m-0"> <small>Signed in as</small><br> {{ Auth::user()->username }}
+                        </h6>
                     </a>
                 </div>
 

@@ -4,7 +4,6 @@
         <div class="row justify-content-center">
             <div class="col-md-8 col-lg-6 col-xl-5">
                 <div class="card" style="margin-top: 100px;">
-
                     <div class="text-center account-logo-box">
                         <div class="mt-2 mb-2">
                             <a href="index.html" class="text-success">
