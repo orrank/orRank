@@ -19,7 +19,7 @@
         {{-- @include('base.footer') --}}
     </div>
 
-    <div class="right-bar">
+    {{-- <div class="right-bar">
         <div class="rightbar-title">
             <a href="javascript:void(0);" class="right-bar-toggle float-right">
                 <i class="mdi mdi-close"></i>
@@ -44,21 +44,20 @@
 
             </div>
         </div> <!-- end slimscroll-menu-->
-    </div>
+    </div> --}}
 
     <!-- Right bar overlay-->
     <div class="rightbar-overlay"></div>
 
     <!-- Vendor js -->
-    <script src="assets/js/vendor.min.js"></script>
+    <script src="{{ asset('assets/js/vendor.min.js') }}"></script>
 
-    <script src="assets/libs/morris-js/morris.min.js"></script>
-    <script src="assets/libs/raphael/raphael.min.js"></script>
-
-    <script src="assets/js/pages/dashboard.init.js"></script>
+    {{-- <script src="{{ asset('assets/libs/morris-js/morris.min.js') }}"></script>
+    <script src="{{ asset('assets/libs/raphael/raphael.min.js') }}"></script>
+    <script src="{{ asset('assets/js/pages/dashboard.init.js') }}"></script> --}}
 
     <!-- App js -->
-    <script src="assets/js/app.min.js"></script>
+    <script src="{{ asset('assets/js/app.min.js') }}"></script>
 </body>
 
 </html>

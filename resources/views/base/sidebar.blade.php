@@ -11,15 +11,11 @@
                 <li class="menu-title">Navigation</li>
 
                 <li>
-                    <a href="javascript: void(0);" class="waves-effect waves-light">
+                    <a href="{{'/'. Auth::user()->username. '/dashboard/'}}">
                         <i class="mdi mdi-view-dashboard"></i>
                         <span class="badge badge-success badge-pill float-right">2</span>
                         <span> Dashboard </span>
                     </a>
-                    <ul class="nav-second-level" aria-expanded="false">
-                        <li><a href="index.html">Dashboard 1</a></li>
-                        <li><a href="dashboard_2.html">Dashboard 2</a></li>
-                    </ul>
                 </li>
 
                 <li>

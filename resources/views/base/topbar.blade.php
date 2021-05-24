@@ -84,7 +84,7 @@
             </div>
         </li>
 
-        <li class="dropdown notification-list">
+        {{-- <li class="dropdown notification-list">
             <a class="nav-link dropdown-toggle  waves-effect" data-toggle="dropdown" href="#" role="button"
                 aria-haspopup="false" aria-expanded="false">
                 <i class="mdi mdi-email noti-icon"></i>
@@ -157,22 +157,33 @@
                 </a>
 
             </div>
-        </li>
+        </li> --}}
 
         <li class="dropdown notification-list">
             <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect" data-toggle="dropdown" href="#" role="button"
                 aria-haspopup="false" aria-expanded="false">
-                <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
-                <span class="d-none d-sm-inline-block ml-1">Alex M.</span>
+                @if (Auth::user()->profile_image)
+                    <img width="200" src="{{ asset('uploads/images/users/' . Auth::user()->profile_image) }}"
+                        alt="{{ Auth::user()->username }}" class="rounded-circle">
+                @else
+                    <img src="https://avatar.tobi.sh/tobiaslins.svg?text={{ substr(Auth::user()->firstname, 0, 1) }}{{ substr(Auth::user()->lastname, 0, 1) }}"
+                        alt="{{ Auth::user()->username }}" class="rounded-circle">
+                @endif
+                <span class="d-none d-sm-inline-block ml-1"></span>
+
+
             </a>
             <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                 <!-- item-->
                 <div class="dropdown-header noti-title">
-                    <h6 class="text-overflow m-0">Welcome !</h6>
+                    <a href="{{ '/' . Auth::user()->username . '/dashboard' }}">
+                        <h6 class="text-overflow m-0"> <small>Signed in as</small><br> ~{{ Auth::user()->username }}
+                        </h6>
+                    </a>
                 </div>
 
                 <!-- item-->
-                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                <a href="{{ '/' . Auth::user()->username . '/profile' }}" class="dropdown-item notify-item">
                     <i class="mdi mdi-account-outline"></i>
                     <span>Profile</span>
                 </a>
@@ -191,7 +202,8 @@
                 </a>
                 <!-- item-->
                 <a id="dark-mode-switcher" href="javascript:void(0);" class="dropdown-item notify-item"
-                    data-bsStyle="assets/css/bootstrap-dark.min.css" data-appStyle="assets/css/app-dark.min.css">
+                    data-bsStyle="{{ asset('assets/css/bootstrap-dark.min.css') }}"
+                    data-appStyle="{{ asset('assets/css/app-dark.min.css') }}">
                     <i class="mdi mdi-brightness-3"></i>
                     <span>Dark Mode</span>
                 </a>
@@ -205,19 +217,24 @@
                 <div class="dropdown-divider"></div>
 
                 <!-- item-->
-                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                    <i class="mdi mdi-logout-variant"></i>
-                    <span>Logout</span>
-                </a>
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                       this.closest('form').submit();" class="dropdown-item notify-item">
+                        <i class="mdi mdi-logout-variant"></i>
+                        <span>Logout</span>
+                    </a>
+                    <!-- Authentication -->
+                </form>
 
             </div>
         </li>
 
-        <li class="dropdown notification-list">
+        {{-- <li class="dropdown notification-list">
             <a href="javascript:void(0);" class="nav-link right-bar-toggle waves-effect">
                 <i class="mdi mdi-settings noti-icon"></i>
             </a>
-        </li>
+        </li> --}}
 
     </ul>
 
@@ -257,39 +274,24 @@
             </form>
         </li>
 
-        <li class="d-none d-lg-block">
-            <a href="#" class="nav-link">New</a>
-        </li>
-
         <li class="dropdown d-none d-lg-block">
             <a class="nav-link dropdown-toggle mr-0 waves-effect" data-toggle="dropdown" href="#" role="button"
                 aria-haspopup="false" aria-expanded="false">
-                <img src="assets/images/flags/us.jpg" alt="user-image" class="mr-1" height="12"> <span
-                    class="align-middle">English <i class="mdi mdi-chevron-down"></i> </span>
+                <span class="align-middle">
+                    <i class=" mdi mdi-plus-box-multiple-outline"></i>
+                    <i class="mdi mdi-chevron-down"></i> </span>
             </a>
             <div class="dropdown-menu">
                 <!-- item-->
                 <a href="javascript:void(0);" class="dropdown-item notify-item">
-                    <img src="assets/images/flags/germany.jpg" alt="user-image" class="mr-1" height="12"> <span
-                        class="align-middle">German</span>
+                    <i class="mdi mdi-shield-star-outline"></i>
+                    <span> New Rating</span>
                 </a>
 
                 <!-- item-->
                 <a href="javascript:void(0);" class="dropdown-item notify-item">
-                    <img src="assets/images/flags/italy.jpg" alt="user-image" class="mr-1" height="12"> <span
-                        class="align-middle">Italian</span>
-                </a>
-
-                <!-- item-->
-                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                    <img src="assets/images/flags/spain.jpg" alt="user-image" class="mr-1" height="12"> <span
-                        class="align-middle">Spanish</span>
-                </a>
-
-                <!-- item-->
-                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                    <img src="assets/images/flags/russia.jpg" alt="user-image" class="mr-1" height="12"> <span
-                        class="align-middle">Russian</span>
+                    <i class="mdi mdi-shield-home-outline"></i>
+                    <span> New Organization</span>
                 </a>
 
             </div>
