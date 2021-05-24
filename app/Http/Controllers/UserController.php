@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\User;
-
+use Auth;
 class UserController extends Controller
 {
     public function index($username)
@@ -62,7 +62,19 @@ class UserController extends Controller
             $request->session()->flash('alert-red', 'New Subject adding failed. Try again...');
             return redirect()->back();
         }
+    }
 
-    
+    public function darkMode(Request $request, $state)
+    {
+        $data = User::find(Auth::user()->id);
+        if($state == 'enable')
+            $data->isDark = 1;
+        else if($state == 'disable')
+            $data->isDark = 0;
+        else
+            return redirect()->back();
+
+        if ($data->save())
+            return redirect()->back();
     }
 }

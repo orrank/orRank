@@ -34,6 +34,8 @@ Route::group(['prefix' => '{username}', 'middleware' => ['auth']], function ($us
 // Form Routes
 Route::group(['middleware' => 'auth'], function(){
 
+    Route::get('/dark-mode/{state}',  [UserController::class, 'darkMode'])->name('darkMode');
+
     Route::post('/user:profile:image:upload', [UserController::class, 'imageUpdate'])->name('imageUpdate');
    
 });
