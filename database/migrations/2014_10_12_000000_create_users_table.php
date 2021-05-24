@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('firstname')->nullable();
             $table->string('lastname')->nullable();
             $table->string('email')->unique();
-            $table->text('profile_photo_path')->nullable();
+            $table->text('profile_image')->nullable();
             $table->string('provider')->nullable();
             $table->string('provider_id')->nullable();
             $table->timestamp('email_verified_at')->nullable();
@@ -31,11 +31,14 @@ class CreateUsersTable extends Migration
             $table->string('company')->nullable();
             $table->string('website')->nullable();
             $table->string('twitter')->nullable();
+            $table->string('facebook')->nullable();
+            $table->string('instagram')->nullable();
 
             $table->boolean('isStaff')->default(false);
             $table->boolean('isDeveloper')->default(false);
+            $table->boolean('isVerified')->default(false);
             $table->boolean('isFlagged')->default(false);
-            $table->boolean('isSuspended')->default(false);
+            $table->boolean('isDark')->default(false);
             $table->string('lastIP')->nullable();
             $table->rememberToken();
             $table->timestamps();

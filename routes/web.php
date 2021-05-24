@@ -21,18 +21,19 @@ Route::get('/', function () {
 
 Route::get('/{username}', [UserController::class, 'index']);
 
-//Route::redirect('/dashboard', '/'. Auth::user()->username .'/dashboard');
-
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [UserController::class, 'dashboard']);
-
 Route::group(['prefix' => '{username}', 'middleware' => ['auth']], function ($username) {
 
     Route::get('/dashboard', [UserController::class, 'dashboard'])->name('dashboard');
 
     Route::get('/profile', [UserController::class, 'profile'])->name('profile');
+
+    Route::get('/profile:edit', [UserController::class, 'update'])->name('edit-profile');
     
 });
 
-// Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-//     return view('dashboard');
-// })->name('dashboard');
+// Form Routes
+Route::group(['middleware' => 'auth'], function(){
+
+    Route::post('/user:profile:image:upload', [UserController::class, 'imageUpdate'])->name('imageUpdate');
+   
+});

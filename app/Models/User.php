@@ -28,6 +28,7 @@ class User extends Authenticatable
         'firstname',
         'lastname',
         'email',
+        'profile_image',
         'provider',
         'bio',
         'mobile',
@@ -35,8 +36,13 @@ class User extends Authenticatable
         'company',
         'website',
         'twitter',
+        'facebook',
+        'instagram',
         'isStaff',
-        'isDeveloper'
+        'isDeveloper',
+        'isFlagged',
+        'isVerified',
+        'isDark'
     ];
 
     /**
@@ -66,6 +72,6 @@ class User extends Authenticatable
      * @var array
      */
     protected $appends = [
-        'profile_photo_url',
+
     ];
 }

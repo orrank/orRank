@@ -29,9 +29,15 @@
                             <div class="text-center card-box shadow-none border border-secoundary">
                                 <div class="member-card">
                                     <div class="avatar-xl member-thumb mb-3 mx-auto d-block">
-                                        <img class="rounded-circle img-thumbnail"
-                                            src="{{ Auth::user()->profile_photo_url }}"
-                                            alt="{{ Auth::user()->username }}">
+                                        @if (Auth::user()->profile_image)
+                                            <img class="rounded-circle img-thumbnail"
+                                                src="{{ asset('uploads/images/users/' . Auth::user()->profile_image) }}"
+                                                alt="{{ Auth::user()->username }}">
+                                        @else
+                                            <img class="rounded-circle img-thumbnail"
+                                                src="https://avatar.tobi.sh/tobiaslins.svg?size=180&text={{ substr(Auth::user()->firstname, 0, 1) }}{{ substr(Auth::user()->lastname, 0, 1) }}"
+                                                alt="{{ Auth::user()->username }}">
+                                        @endif
                                         <i class="mdi mdi-star-circle member-star text-success" title="verified user"></i>
                                     </div>
 
@@ -41,8 +47,9 @@
                                         <p class="text-muted mb-2">~{{ Auth::user()->username }}</p>
                                     </div>
 
-                                    <button type="button"
-                                        class="btn btn-dark btn-sm width-sm waves-effect mt-2 waves-light">Follow</button>
+                                    <a href="/{{ Auth::user()->username }}/profile:edit"
+                                        class="btn btn-dark btn-sm width-sm waves-effect mt-2 waves-light">Edit
+                                        Profile</a>
 
                                     <p class="sub-header mt-3">
                                         {{ Auth::user()->bio }}

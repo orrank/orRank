@@ -162,11 +162,15 @@
         <li class="dropdown notification-list">
             <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect" data-toggle="dropdown" href="#" role="button"
                 aria-haspopup="false" aria-expanded="false">
-                @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
-                    <img src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->username }}"
-                        class="rounded-circle">
-                    <span class="d-none d-sm-inline-block ml-1"></span>
+                @if (Auth::user()->profile_image)
+                    <img width="200" src="{{ asset('uploads/images/users/' . Auth::user()->profile_image) }}"
+                        alt="{{ Auth::user()->username }}" class="rounded-circle">
+                @else
+                    <img src="https://avatar.tobi.sh/tobiaslins.svg?text={{ substr(Auth::user()->firstname, 0, 1) }}{{ substr(Auth::user()->lastname, 0, 1) }}"
+                        alt="{{ Auth::user()->username }}" class="rounded-circle">
                 @endif
+                <span class="d-none d-sm-inline-block ml-1"></span>
+
 
             </a>
             <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
