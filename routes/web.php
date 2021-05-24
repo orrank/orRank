@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\UserController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,8 +21,15 @@ Route::get('/', function () {
 
 Route::get('/{username}', [UserController::class, 'index']);
 
+//Route::redirect('/dashboard', '/'. Auth::user()->username .'/dashboard');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [UserController::class, 'dashboard']);
+
 Route::group(['prefix' => '{username}', 'middleware' => ['auth']], function ($username) {
+
     Route::get('/dashboard', [UserController::class, 'dashboard'])->name('dashboard');
+
+    Route::get('/profile', [UserController::class, 'profile'])->name('profile');
     
 });
 
