@@ -196,18 +196,19 @@
                 <div class="dropdown-divider"></div>
 
                 <!-- item-->
-                <a id="light-mode-switcher" href="javascript:void(0);" class="dropdown-item notify-item">
-                    <i class="mdi mdi-brightness-5"></i>
-                    <span>Light Mode</span>
-                </a>
-                <!-- item-->
-                <a id="dark-mode-switcher" href="javascript:void(0);" class="dropdown-item notify-item"
-                    data-bsStyle="{{ asset('assets/css/bootstrap-dark.min.css') }}"
-                    data-appStyle="{{ asset('assets/css/app-dark.min.css') }}">
-                    <i class="mdi mdi-brightness-3"></i>
-                    <span>Dark Mode</span>
-                </a>
-
+                @if (Auth::user()->isDark == 0)
+                    <a href="/dark-mode/enable" class="dropdown-item notify-item"
+                        data-bsStyle="{{ asset('assets/css/bootstrap-dark.min.css') }}"
+                        data-appStyle="{{ asset('assets/css/app-dark.min.css') }}">
+                        <i class="mdi mdi-brightness-3"></i>
+                        <span>Dark Mode</span>
+                    </a>
+                @else
+                    <a href="/dark-mode/disable" class="dropdown-item notify-item">
+                        <i class="mdi mdi-brightness-5"></i>
+                        <span>Light Mode</span>
+                    </a>
+                @endif
                 <!-- item-->
                 <a href="javascript:void(0);" class="dropdown-item notify-item">
                     <i class="mdi mdi-lock-outline"></i>

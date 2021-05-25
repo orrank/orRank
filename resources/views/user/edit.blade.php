@@ -28,34 +28,35 @@
                     <hr>
                     <div class="row">
                         <div class="col-lg-5 col-md-6">
-                            <form class="form-horizontal">
+                            <form class="form-horizontal" method="POST" action="/user:profile:detail:update">
+                                @csrf
                                 <div class="form-group">
                                     <label class="control-label">First Name</label>
                                     <input type="text" placeholder="First Name" value="{{ Auth::user()->firstname }}"
-                                        class="form-control" required>
+                                        name="firstname" class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Last Name</label>
                                     <input type="text" placeholder="Last Name" value="{{ Auth::user()->lastname }}"
-                                        class="form-control">
+                                        name="lastname" class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Bio</label>
-                                    <textarea name="" class="form-control"
+                                    <textarea name="bio" class="form-control"
                                         placeholder="Bio">{{ Auth::user()->bio }}</textarea>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Company</label>
                                     <input type="text" placeholder="Company" value="{{ Auth::user()->company }}"
-                                        class="form-control">
+                                        name="company" class="form-control">
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label">Location</label>
                                     <input type="text" placeholder="Location" value="{{ Auth::user()->location }}"
-                                        class="form-control">
+                                        name="location" class="form-control">
                                 </div>
 
-                                <button class="btn btn-dark btn-block">Update Profile</button>
+                                <button type="submit" class="btn btn-dark btn-block">Update Profile</button>
                             </form>
                         </div>
                         <div class="col-lg-2"></div>
@@ -78,7 +79,7 @@
                                     <ul class="dropdown-menu">
                                         <li><a href="javascript:void(0)" data-toggle="modal" data-target="#card-image"
                                                 class="dropdown-item">Upload a photo </a></li>
-                                        <li><a href="#" class="dropdown-item">Remove photo</a></li>
+                                        <li><a href="/user:image:remove" class="dropdown-item">Remove photo</a></li>
                                     </ul>
                                 </div>
                             </center>

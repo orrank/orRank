@@ -3,6 +3,16 @@
 
 <head>
     @include('base.head')
+    @if (Auth::user()->isDark == 0)
+        <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('assets/css/app.min.css') }}" rel="stylesheet" type="text/css" />
+
+    @else
+        <link href="{{ asset('assets/css/bootstrap-dark.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('assets/css/app-dark.min.css') }}" rel="stylesheet" type="text/css" />
+    @endif
 </head>
 
 <body>
@@ -51,13 +61,10 @@
 
     <!-- Vendor js -->
     <script src="{{ asset('assets/js/vendor.min.js') }}"></script>
-
-    {{-- <script src="{{ asset('assets/libs/morris-js/morris.min.js') }}"></script>
-    <script src="{{ asset('assets/libs/raphael/raphael.min.js') }}"></script>
-    <script src="{{ asset('assets/js/pages/dashboard.init.js') }}"></script> --}}
-
     <!-- App js -->
     <script src="{{ asset('assets/js/app.min.js') }}"></script>
+
+    @livewireScripts
 </body>
 
 </html>

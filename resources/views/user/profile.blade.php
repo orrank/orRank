@@ -122,64 +122,32 @@
                                 <!-- end col -->
 
                                 <div class="col-xl-4">
-                                    <h5 class="header-title">Friends</h5>
+                                    <h5 class="header-title">Recently joined users</h5>
 
                                     <div class="inbox-widget">
-                                        <div>
-                                            <div class="inbox-item">
-                                                <div class="inbox-item-img"><img src="assets/images/users/avatar-2.jpg"
-                                                        class="rounded-circle" alt=""></div>
-                                                <p class="inbox-item-author">Tomaslau</p>
-                                                <p class="inbox-item-text">I've finished it! See you so...</p>
-                                                <p class="inbox-item-date">
-                                                    <button type="button" class="btn btn-xs btn-success">Follow</button>
-                                                </p>
+                                        @foreach ($users as $user)
+                                            <div>
+                                                <div class="inbox-item">
+                                                    <div class="inbox-item-img">
+                                                        @if ($user->profile_image)
+                                                            <img src="{{ asset('uploads/images/users/' . $user->profile_image) }}"
+                                                                class="rounded-circle" alt="{{ $user->username }}">
+                                                        @else
+                                                            <img class="rounded-circle"
+                                                                src="https://avatar.tobi.sh/tobiaslins.svg?size=180&text={{ substr($user->firstname, 0, 1) }}{{ substr($user->lastname, 0, 1) }}"
+                                                                alt="{{ $user->username }}">
+                                                        @endif
+                                                    </div>
+                                                    <p class="inbox-item-author">{{ $user->firstname }}
+                                                        {{ $user->lastname }}</p>
+                                                    <p class="inbox-item-text">~{{ $user->username }}</p>
+                                                    <p class="inbox-item-date">
+                                                        @livewire('components.follow-button', ['frdId' => $user->id],
+                                                        key($user->id))
+                                                    </p>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div>
-                                            <div class="inbox-item">
-                                                <div class="inbox-item-img"><img src="assets/images/users/avatar-3.jpg"
-                                                        class="rounded-circle" alt=""></div>
-                                                <p class="inbox-item-author">Stillnotdavid</p>
-                                                <p class="inbox-item-text">This theme is awesome!</p>
-                                                <p class="inbox-item-date">
-                                                    <button type="button" class="btn btn-xs btn-danger">Unfollow</button>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="inbox-item">
-                                                <div class="inbox-item-img"><img src="assets/images/users/avatar-4.jpg"
-                                                        class="rounded-circle" alt=""></div>
-                                                <p class="inbox-item-author">Kurafire</p>
-                                                <p class="inbox-item-text">Nice to meet you</p>
-                                                <p class="inbox-item-date">
-                                                    <button type="button" class="btn btn-xs btn-success">Follow</button>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="inbox-item">
-                                                <div class="inbox-item-img"><img src="assets/images/users/avatar-5.jpg"
-                                                        class="rounded-circle" alt=""></div>
-                                                <p class="inbox-item-author">Shahedk</p>
-                                                <p class="inbox-item-text">Hey! there I'm available...</p>
-                                                <p class="inbox-item-date">
-                                                    <button type="button" class="btn btn-xs btn-success">Follow</button>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="inbox-item">
-                                                <div class="inbox-item-img"><img src="assets/images/users/avatar-6.jpg"
-                                                        class="rounded-circle" alt=""></div>
-                                                <p class="inbox-item-author">Adhamdannaway</p>
-                                                <p class="inbox-item-text">This theme is awesome!</p>
-                                                <p class="inbox-item-date">
-                                                    <button type="button" class="btn btn-xs btn-success">Follow</button>
-                                                </p>
-                                            </div>
-                                        </div>
+                                        @endforeach
                                     </div>
 
                                 </div>
