@@ -36,6 +36,40 @@ class UserController extends Controller
         return view('user.edit');
     }
 
+    public function infoUpdate(Request $request)
+    {
+        $data = User::find(Auth::user()->id);
+
+        $data->firstname  = $request->firstname;
+        $data->lastname  = $request->lastname;
+        $data->bio  = $request->bio;
+        $data->company  = $request->company;
+        $data->location  = $request->location;
+
+        if ($data->save()) {
+
+            $request->session()->flash('alert-green', 'New Subject Successfully added...');
+            return redirect()->back();
+        }
+        else
+        {
+            $request->session()->flash('alert-red', 'New Subject adding failed. Try again...');
+            return redirect()->back();
+        }
+
+    }
+
+    public function imageRemove()
+    {
+        $data = User::find(Auth::user()->id);
+
+        $data->profile_image = '';
+
+        if ($data->save()) {
+            return redirect()->back();
+        }
+    }
+
     public function imageUpdate(Request $request)
     {
         if($request->hasFile('profile_image')){
@@ -48,7 +82,7 @@ class UserController extends Controller
             $fileNameToStore = null;
         }
 
-        $data = User::find($request->userID);
+        $data = User::find(Auth::user()->id);
 
         $data->profile_image = $fileNameToStore;
 

@@ -19,6 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/user:image:remove', [UserController::class, 'imageRemove']);
+
 Route::get('/{username}', [UserController::class, 'index']);
 
 Route::group(['prefix' => '{username}', 'middleware' => ['auth']], function ($username) {
@@ -36,6 +38,8 @@ Route::group(['middleware' => 'auth'], function(){
 
     Route::get('/dark-mode/{state}',  [UserController::class, 'darkMode'])->name('darkMode');
 
+    Route::post('/user:profile:detail:update', [UserController::class, 'infoUpdate'])->name('infoUpdate');
+
     Route::post('/user:profile:image:upload', [UserController::class, 'imageUpdate'])->name('imageUpdate');
-   
+
 });
