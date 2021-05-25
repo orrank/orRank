@@ -43,10 +43,3 @@ Route::group(['middleware' => 'auth'], function(){
     Route::post('/user:profile:image:upload', [UserController::class, 'imageUpdate'])->name('imageUpdate');
 
 });
-
-// Route::group(['middleware' => ['auth']], function () {
-
-//     Route::post('/follow/{user}', 'FollowController@follow');
-
-//     Route::delete('/unfollow/{user}', 'FollowController@unfollow');
-// });

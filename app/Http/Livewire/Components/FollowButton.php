@@ -3,15 +3,42 @@
 namespace App\Http\Livewire\Components;
 
 use Livewire\Component;
-use App\User;
-use Auth;
+use App\Models\User;
+use App\Models\Follow;
+use Illuminate\Support\Facades\Auth;
 class FollowButton extends Component
 {
     public $fclz, $ficon, $ftxt, $frdId;
 
+    public function xfollow(User $user)
+    {
+        $count = Follow::where([['user_id', '=', Auth::user()->id], ['target_id', '=', $this->frdId]])->count();
+        if($count == 1)
+        {
+            Follow::where([['user_id', '=', Auth::user()->id], ['target_id', '=', $this->frdId]])->delete();
+            $this->fclz = 'btn-success';
+            $this->ficon = 'fa-heart';
+            $this->ftxt = 'Follow';
+        }
+        else
+        {
+            $data = new Follow;
+            $data-> user_id = Auth::user()->id;
+            $data-> target_id = $this->frdId;
+
+            if($data->save())
+            {
+                $this->fclz = 'btn-danger';
+                $this->ficon = 'fa-times';
+                $this->ftxt = 'Unfollow';
+            }
+        }
+    }
+
     public function mount()
     {
-        if(Auth::User()->isFollowing($this->frdId))
+        $count = Follow::where([['user_id', '=', Auth::user()->id], ['target_id', '=', $this->frdId]])->count();
+        if($count == 1)
         {
             $this->fclz = 'btn-danger';
             $this->ficon = 'fa-times';
