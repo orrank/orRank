@@ -28,7 +28,9 @@ class UserController extends Controller
 
     public function profile()
     {
-        return view('user.profile');
+        return view('user.profile', [
+            'users' => User::where('id', '!=', Auth::id())->get()
+        ]);
     }
 
     public function update()
