@@ -142,7 +142,8 @@
                                                         {{ $user->lastname }}</p>
                                                     <p class="inbox-item-text">~{{ $user->username }}</p>
                                                     <p class="inbox-item-date">
-                                                        @livewire('components.follow')
+                                                        @livewire('components.follow-button', ['frdId' => $user->id],
+                                                        key($user->id))
                                                     </p>
                                                 </div>
                                             </div>
