@@ -25,8 +25,7 @@
 
                             <div class="form-group">
                                 <label for="username">Username</label>
-                                <input class="form-control" type="text" id="username" name="username"
-                                    :value="old('username')" required>
+                                <input class="form-control" type="text" id="username" name="username" required>
                             </div>
 
                             <div class="form-group">

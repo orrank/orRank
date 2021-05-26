@@ -38,7 +38,10 @@
                                                 src="https://avatar.tobi.sh/tobiaslins.svg?size=180&text={{ substr(Auth::user()->firstname, 0, 1) }}{{ substr(Auth::user()->lastname, 0, 1) }}"
                                                 alt="{{ Auth::user()->username }}">
                                         @endif
-                                        <i class="mdi mdi-star-circle member-star text-success" title="verified user"></i>
+                                        @if (Auth::user()->isVerified)
+                                            <i class="mdi mdi-star-circle member-star text-success"
+                                                title="verified user"></i>
+                                        @endif
                                     </div>
 
                                     <div class="">
@@ -54,23 +57,42 @@
                                     <p class="sub-header mt-3">
                                         {{ Auth::user()->bio }}
                                     </p>
-
+                                    <p class="text-muted font-13">
+                                        <i class="mdi mdi-account-multiple-check"></i> {{ $followers }} Followers
+                                        &nbsp;&nbsp; •
+                                        &nbsp;&nbsp; {{ $following }}
+                                        Following
+                                    </p>
                                     <hr />
 
                                     <div class="text-left">
-
-                                        <p class="text-muted font-13"><strong><i
-                                                    class="mdi mdi-cellphone-iphone"></i></strong><span class="ml-4">
-                                                {{ Auth::user()->mobile }}</span></p>
-
-                                        <p class="text-muted font-13"><strong><i class="mdi mdi-email-outline"></i></strong>
-                                            <span class="ml-4">
-                                                {{ Auth::user()->email }}</span>
-                                        </p>
-
-                                        <p class="text-muted font-13"><strong><i
-                                                    class="mdi mdi-map-marker-outline"></i></strong> <span class="ml-4">
-                                                {{ Auth::user()->location }}</span></p>
+                                        @if (Auth::user()->mobile)
+                                            <p class="text-muted font-13">
+                                                <strong>
+                                                    <i class="mdi mdi-cellphone-iphone"></i>
+                                                </strong>
+                                                <span class="ml-4">
+                                                    {{ Auth::user()->mobile }}</span>
+                                            </p>
+                                        @endif
+                                        @if (Auth::user()->email)
+                                            <p class="text-muted font-13">
+                                                <strong>
+                                                    <i class="mdi mdi-email-outline"></i>
+                                                </strong>
+                                                <span class="ml-4">
+                                                    {{ Auth::user()->email }}</span>
+                                            </p>
+                                        @endif
+                                        @if (Auth::user()->location)
+                                            <p class="text-muted font-13">
+                                                <strong>
+                                                    <i class="mdi mdi-map-marker-outline"></i>
+                                                </strong>
+                                                <span class="ml-4">
+                                                    {{ Auth::user()->location }}</span>
+                                            </p>
+                                        @endif
                                     </div>
 
                                     <ul class="social-links list-inline mt-4">

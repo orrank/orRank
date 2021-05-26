@@ -247,7 +247,7 @@
                 <span class="logo-lg-text-light">Rating.Land</span>
             </span>
             <span class="logo-sm">
-                <span class="logo-sm-text-dark">R</span>
+                <span class="logo-sm-text-dark" style="color: white;"><i class="mdi mdi-star  mdi-36px"></i></span>
                 <!-- <img src="assets/images/logo-sm.png" alt="" height="24"> -->
             </span>
         </a>
@@ -286,7 +286,7 @@
                 <!-- item-->
                 <a href="javascript:void(0);" class="dropdown-item notify-item">
                     <i class="mdi mdi-shield-star-outline"></i>
-                    <span> New Rating</span>
+                    <span> New Rating Queue</span>
                 </a>
 
                 <!-- item-->
