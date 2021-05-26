@@ -286,7 +286,7 @@
                 <!-- item-->
                 <a href="javascript:void(0);" class="dropdown-item notify-item">
                     <i class="mdi mdi-shield-star-outline"></i>
-                    <span> New Rating</span>
+                    <span> New Rating Queue</span>
                 </a>
 
                 <!-- item-->
