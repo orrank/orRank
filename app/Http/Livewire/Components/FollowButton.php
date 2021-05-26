@@ -17,7 +17,7 @@ class FollowButton extends Component
         {
             Follow::where([['user_id', '=', Auth::user()->id], ['target_id', '=', $this->frdId]])->delete();
             $this->fclz = 'btn-success';
-            $this->ficon = 'fa-heart';
+            $this->ficon = 'fa-check';
             $this->ftxt = 'Follow';
         }
         else
@@ -47,7 +47,7 @@ class FollowButton extends Component
         else
         {
             $this->fclz = 'btn-success';
-            $this->ficon = 'fa-heart';
+            $this->ficon = 'fa-check';
             $this->ftxt = 'Follow';
         }
 

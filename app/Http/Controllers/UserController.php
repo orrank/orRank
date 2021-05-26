@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use Auth;
 class UserController extends Controller
@@ -112,5 +112,21 @@ class UserController extends Controller
 
         if ($data->save())
             return redirect()->back();
+    }
+
+    public function store(Request $request)
+    {
+        $data = new User;
+        
+        $data->username = $request->username;
+        $data->firstname = $request->username;
+        $data->lastname = $request->username;
+        $data->email = $request->email;
+        $data->password = Hash::make($request->password);
+
+        if($data->save())
+        {
+            
+        }
     }
 }

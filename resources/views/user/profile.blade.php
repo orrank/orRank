@@ -38,7 +38,10 @@
                                                 src="https://avatar.tobi.sh/tobiaslins.svg?size=180&text={{ substr(Auth::user()->firstname, 0, 1) }}{{ substr(Auth::user()->lastname, 0, 1) }}"
                                                 alt="{{ Auth::user()->username }}">
                                         @endif
-                                        <i class="mdi mdi-star-circle member-star text-success" title="verified user"></i>
+                                        @if (Auth::user()->isVerified)
+                                            <i class="mdi mdi-star-circle member-star text-success"
+                                                title="verified user"></i>
+                                        @endif
                                     </div>
 
                                     <div class="">
