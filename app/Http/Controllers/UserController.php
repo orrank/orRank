@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use App\Models\Follow;
 use Auth;
 class UserController extends Controller
 {
@@ -29,7 +30,9 @@ class UserController extends Controller
     public function profile()
     {
         return view('user.profile', [
-            'users' => User::where('id', '!=', Auth::id())->get()
+            'users' => User::where('id', '!=', Auth::id())->get(),
+            'followers' => Follow::where('target_id', Auth::id())->count(),
+            'following' => Follow::where('user_id', Auth::id())->count()
         ]);
     }
 
@@ -126,7 +129,7 @@ class UserController extends Controller
 
         if($data->save())
         {
-            
+
         }
     }
 }
