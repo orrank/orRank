@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\OrganizationController;
+use App\Http\Controllers\QueueController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,13 +34,15 @@ Route::group(['prefix' => '{username}', 'middleware' => ['auth']], function ($us
     Route::get('/profile', [UserController::class, 'profile'])->name('profile');
 
     Route::get('/profile:edit', [UserController::class, 'update'])->name('edit-profile');
-
-    Route::get('/organizations/new', [OrganizationController::class, 'index'])->name('new-org');
     
 });
 
 // Form Routes
 Route::group(['middleware' => 'auth'], function(){
+
+    Route::get('/organization/new', [OrganizationController::class, 'index'])->name('new-org');
+
+    Route::get('/queue/new', [QueueController::class, 'index'])->name('new-queue');
 
     Route::get('/dark-mode/{state}',  [UserController::class, 'darkMode'])->name('darkMode');
 

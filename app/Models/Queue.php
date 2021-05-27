@@ -13,7 +13,7 @@ class Queue extends Model
         'name',
         'description',
         'logo',
-        'type',
+        'type',  //star, emoji, slider
         'user_id',
         'organization_id'
     ];

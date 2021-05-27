@@ -14,7 +14,7 @@ class QueueController extends Controller
      */
     public function index()
     {
-        //
+        return  view('queue.create');
     }
 
     /**
