@@ -57,18 +57,14 @@
                     <i class="mdi mdi-chevron-down"></i> </span>
             </a>
             <div class="dropdown-menu">
-                <!-- item-->
-                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                <a href="/login" class="dropdown-item notify-item">
                     <i class="mdi mdi-shield-star-outline"></i>
-                    <span> New Rating</span>
+                    <span> New Rating Queue</span>
                 </a>
-
-                <!-- item-->
-                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                <a href="/login" class="dropdown-item notify-item">
                     <i class="mdi mdi-shield-home-outline"></i>
                     <span> New Organization</span>
                 </a>
-
             </div>
         </li>
     </ul>
