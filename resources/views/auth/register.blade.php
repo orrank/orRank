@@ -15,38 +15,9 @@
 
                     <div class="card-body">
 
-                        <form method="POST" action="{{ route('register') }}">
+                        <form method="POST" action="/user:registration">
                             @csrf
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input class="form-control" type="email" id="email" name="email" :value="old('email')"
-                                    required autofocus>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="username">Username</label>
-                                <input class="form-control" type="text" id="username" name="username" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="password">Password</label>
-                                <input class="form-control" type="password" id="password" name="password" required>
-                            </div>
-
-                            <div class="form-group">
-                                <div class="checkbox checkbox-success pt-1 pl-1">
-                                    <input name="terms" id="terms" type="checkbox" required>
-                                    <label for="terms" class="mb-0">I accept <a href="#">Terms and
-                                            Conditions</a></label>
-                                </div>
-                            </div>
-
-                            <div class="form-group account-btn text-center mt-2">
-                                <div class="col-12">
-                                    <button class="btn width-md btn-bordered btn-danger waves-effect waves-light"
-                                        type="submit">Sign Up</button>
-                                </div>
-                            </div>
+                            @livewire('components.register-form')
                         </form>
 
                     </div>
@@ -54,7 +25,17 @@
                 </div>
                 <!-- end card -->
 
-                <x-jet-validation-errors />
+                @if (Session::has('success'))
+                    <div class="alert alert-success alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        {{ Session::get('success') }}
+                    </div>
+                @elseif(Session::has('failed'))
+                    <div class="alert alert-danger alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        {{ Session::get('failed') }}
+                    </div>
+                @endif
 
                 <div class="row mt-5">
                     <div class="col-sm-12 text-center">

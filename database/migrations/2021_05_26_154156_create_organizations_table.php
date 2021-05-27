@@ -20,7 +20,7 @@ class CreateOrganizationsTable extends Migration
             $table->string('logo');
             $table->string('website');
             $table->integer('user_id');
-            $table->string('orgname');
+            $table->string('orgname')->unique();;
             $table->boolean('isVerified')->default(false);
             $table->timestamps();
         });

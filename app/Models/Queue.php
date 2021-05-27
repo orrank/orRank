@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Queue extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'description',
+        'logo',
+        'type',
+        'user_id',
+        'organization_id'
+    ];
 }

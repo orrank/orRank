@@ -19,6 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::post('/user:registration', [UserController::class, 'store']);
+
 Route::get('/user:image:remove', [UserController::class, 'imageRemove']);
 
 Route::get('/{username}', [UserController::class, 'index']);

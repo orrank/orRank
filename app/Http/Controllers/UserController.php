@@ -117,19 +117,32 @@ class UserController extends Controller
             return redirect()->back();
     }
 
-    public function store(Request $request)
-    {
-        $data = new User;
-        
-        $data->username = $request->username;
-        $data->firstname = $request->username;
-        $data->lastname = $request->username;
-        $data->email = $request->email;
-        $data->password = Hash::make($request->password);
+    public function store(Request $request) {
 
-        if($data->save())
-        {
+        $request->validate(
+            [
+                'username'          =>      'required|string|max:30|unique:users',
+                'email'             =>      'required|email|unique:users,email',
+                'password'          =>      'required|alpha_num|min:6',
+            ]
+        );
 
+        $dataArray      =       array(
+            "username"      =>          $request->username,
+            "email"         =>          $request->email,
+            "firstname"     =>          $request->username,
+            "lastname"      =>          $request->username,
+            "password"      =>          Hash::make($request->password)
+        );
+
+        $user  =  User::create($dataArray);
+
+        if(!is_null($user)) {
+            return back()->with("success", "Success! Registration completed");
+        }
+
+        else {
+            return back()->with("failed", "Alert! Failed to register");
         }
     }
 }
