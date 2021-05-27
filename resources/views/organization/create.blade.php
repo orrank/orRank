@@ -38,7 +38,19 @@
                     </div>
 
                     <div class="col-lg-6 mt-4">
-
+                        <center>
+                            <img width="200" class="rounded-circle"
+                                src="https://avatar.tobi.sh/tobiaslins.svg?size=180&text=Org">
+                            <div class="btn-group show" style="margin-left: -25px;">
+                                <button type="button" class="btn btn-secondary dropdown-toggle waves-effect"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> <i
+                                        class="mdi mdi-lead-pencil"></i><i class="mdi mdi-chevron-down"></i></button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="javascript:void(0)" data-toggle="modal" data-target="#card-image"
+                                            class="dropdown-item">Upload a photo </a></li>
+                                </ul>
+                            </div>
+                        </center>
                     </div>
                 </div>
 
