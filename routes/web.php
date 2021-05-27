@@ -32,6 +32,8 @@ Route::group(['prefix' => '{username}', 'middleware' => ['auth']], function ($us
     Route::get('/profile', [UserController::class, 'profile'])->name('profile');
 
     Route::get('/profile:edit', [UserController::class, 'update'])->name('edit-profile');
+
+    Route::get('/organizations/new', [OrganizationController::class, 'index'])->name('new-org');
     
 });
 

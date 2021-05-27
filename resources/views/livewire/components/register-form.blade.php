@@ -29,7 +29,7 @@
 
     <div class="form-group account-btn text-center mt-2">
         <div class="col-12">
-            <button class="btn width-md btn-bordered btn-danger waves-effect waves-light" type="submit"
+            <button class="btn width-md btn-bordered btn-dark waves-effect waves-light" type="submit"
                 {{ $btnstatus }}>Sign Up</button>
         </div>
     </div>

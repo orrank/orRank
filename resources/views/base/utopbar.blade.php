@@ -20,8 +20,9 @@
                 <span class="logo-lg-text-light">Rating.Land</span>
             </span>
             <span class="logo-sm">
-                <span class="logo-sm-text-dark" style="color: white;"><i class="mdi mdi-star  mdi-36px"></i></span>
-                <!-- <img src="assets/images/logo-sm.png" alt="" height="24"> -->
+                <!-- <span class="logo-sm-text-dark" style="color: white;"><i class="mdi mdi-star  mdi-36px"></i></span> -->
+                <img src="{{ asset('assets/images/Rating.Land.svg') }}" style="margin-top: 7px;" alt="logo"
+                    height="55">
             </span>
         </a>
     </div>
