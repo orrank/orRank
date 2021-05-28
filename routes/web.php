@@ -10,15 +10,27 @@ use App\Http\Controllers\QueueController;
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
 */
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+// Form Routes
+Route::group(['middleware' => 'auth'], function(){
+
+    Route::get('/dashboard', [UserController::class, 'dashboard']);
+
+    Route::get('/organization/new', [OrganizationController::class, 'index']);
+
+    Route::get('/queue/new', [QueueController::class, 'index']);
+
+    Route::get('/dark-mode/{state}',  [UserController::class, 'darkMode']);
+
+    Route::post('/user:profile:detail:update', [UserController::class, 'infoUpdate']);
+
+    Route::post('/user:profile:image:upload', [UserController::class, 'imageUpdate']);
+
 });
 
 Route::post('/user:registration', [UserController::class, 'store']);
@@ -29,25 +41,12 @@ Route::get('/{username}', [UserController::class, 'index']);
 
 Route::group(['prefix' => '{username}', 'middleware' => ['auth']], function ($username) {
 
-    Route::get('/dashboard', [UserController::class, 'dashboard'])->name('dashboard');
+    Route::get('/dashboard', [UserController::class, 'dashboard']);
 
-    Route::get('/profile', [UserController::class, 'profile'])->name('profile');
+    Route::get('/profile', [UserController::class, 'profile']);
 
-    Route::get('/profile:edit', [UserController::class, 'update'])->name('edit-profile');
+    Route::get('/profile:edit', [UserController::class, 'update']);
     
 });
 
-// Form Routes
-Route::group(['middleware' => 'auth'], function(){
 
-    Route::get('/organization/new', [OrganizationController::class, 'index'])->name('new-org');
-
-    Route::get('/queue/new', [QueueController::class, 'index'])->name('new-queue');
-
-    Route::get('/dark-mode/{state}',  [UserController::class, 'darkMode'])->name('darkMode');
-
-    Route::post('/user:profile:detail:update', [UserController::class, 'infoUpdate'])->name('infoUpdate');
-
-    Route::post('/user:profile:image:upload', [UserController::class, 'imageUpdate'])->name('imageUpdate');
-
-});

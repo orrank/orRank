@@ -175,14 +175,20 @@
 
     <!-- LOGO -->
     <div class="logo-box">
-        <a href="index.html" class="logo text-center">
+        <a href="/" class="logo text-center">
             <span class="logo-lg">
                 <!-- <img src="assets/images/logo-light.png" alt="" height="18"> -->
                 <span class="logo-lg-text-light">Rating.Land</span>
             </span>
             <span class="logo-sm">
                 <!-- <span class="logo-sm-text-dark" style="color: white;"><i class="mdi mdi-star  mdi-36px"></i></span> -->
-                <img src="{{ asset('assets/images/Rating.Land.svg') }}" alt="logo" height="45">
+                @if (Auth::user())
+                    <img src="{{ asset('assets/images/Rating.Land.svg') }}" alt="logo" height="45" />
+                @else
+                    <img src="{{ asset('assets/images/Rating.Land.svg') }}" style="margin-top: 10px;" alt="logo"
+                        height="45" />
+                @endif
+
             </span>
         </a>
     </div>

@@ -19,6 +19,7 @@ class CreateQueuesTable extends Migration
             $table->text('description');
             $table->string('logo');
             $table->string('type');
+            $table->integer('interval')->nullable();
             $table->integer('user_id')->nullable();
             $table->integer('organization_id')->nullable();
             $table->timestamps();
