@@ -1,8 +1,8 @@
 <div>
     <style>
         :root {
-            --square-size: 15px;
-            --square-gap: 4px;
+            --square-size: 14px;
+            --square-gap: 5px;
             --week-width: calc(var(--square-size) + var(--square-gap));
         }
 

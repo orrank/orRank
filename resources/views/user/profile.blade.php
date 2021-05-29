@@ -1,18 +1,19 @@
 @extends('layouts.dashboard')
 @section('content')
-
-    <!-- Start Content-->
     <div class="container-fluid">
-
-        <!-- start page title -->
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box">
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
-                            <li class="breadcrumb-item"><a href="/">RatingLand</a></li>
-                            <li class="breadcrumb-item"><a
-                                    href="/{{ Auth::user()->username }}">~{{ Auth::user()->username }}</a></li>
+                            <li class="breadcrumb-item"><a href="/">RatinQ</a></li>
+                            @if (Auth::user() && Auth::user()->id == $user->id)
+                                <li class="breadcrumb-item"><a
+                                        href="/{{ Auth::user()->username }}">~{{ Auth::user()->username }}</a></li>
+                            @else
+                                <li class="breadcrumb-item"><a href="/{{ $user->username }}">~{{ $user->username }}</a>
+                                </li>
+                            @endif
                             <li class="breadcrumb-item active">Profile</li>
                         </ol>
                     </div>
@@ -20,8 +21,6 @@
                 </div>
             </div>
         </div>
-        <!-- end page title -->
-
         <div class="row">
             <div class="col-sm-12">
                 <div class="card-box">
@@ -30,42 +29,67 @@
                             <div class="text-center card-box shadow-none border border-secoundary">
                                 <div class="member-card">
                                     <div class="avatar-xl member-thumb mb-3 mx-auto d-block">
-                                        @if (Auth::user()->profile_image)
-                                            <img class="rounded-circle img-thumbnail"
-                                                src="{{ asset('uploads/images/users/' . Auth::user()->profile_image) }}"
-                                                alt="{{ Auth::user()->username }}">
+                                        @if (Auth::user() && Auth::user()->id == $user->id)
+                                            @if (Auth::user()->profile_image)
+                                                <img class="rounded-circle img-thumbnail"
+                                                    src="{{ asset('uploads/images/users/' . Auth::user()->profile_image) }}"
+                                                    alt="{{ Auth::user()->username }}">
+                                            @else
+                                                <img class="rounded-circle img-thumbnail"
+                                                    src="https://avatar.tobi.sh/tobiaslins.svg?size=180&text={{ substr(Auth::user()->firstname, 0, 1) }}{{ substr(Auth::user()->lastname, 0, 1) }}"
+                                                    alt="{{ Auth::user()->username }}">
+                                            @endif
+                                            @if (Auth::user()->isVerified)
+                                                <i class="mdi mdi-star-circle member-star text-success"
+                                                    title="verified user"></i>
+                                            @endif
                                         @else
-                                            <img class="rounded-circle img-thumbnail"
-                                                src="https://avatar.tobi.sh/tobiaslins.svg?size=180&text={{ substr(Auth::user()->firstname, 0, 1) }}{{ substr(Auth::user()->lastname, 0, 1) }}"
-                                                alt="{{ Auth::user()->username }}">
-                                        @endif
-                                        @if (Auth::user()->isVerified)
-                                            <i class="mdi mdi-star-circle member-star text-success"
-                                                title="verified user"></i>
+                                            @if ($user->profile_image)
+                                                <img class="rounded-circle img-thumbnail"
+                                                    src="{{ asset('uploads/images/users/' . $user->profile_image) }}"
+                                                    alt="{{ $user->username }}">
+                                            @else
+                                                <img class="rounded-circle img-thumbnail"
+                                                    src="https://avatar.tobi.sh/tobiaslins.svg?size=180&text={{ substr($user->firstname, 0, 1) }}{{ substr($user->lastname, 0, 1) }}"
+                                                    alt="{{ $user->username }}">
+                                            @endif
+                                            @if ($user->isVerified)
+                                                <i class="mdi mdi-star-circle member-star text-success"
+                                                    title="verified user"></i>
+                                            @endif
                                         @endif
                                     </div>
-
-                                    <div class="">
-                                        <h5 class="font-18 mb-1">{{ Auth::user()->firstname }}
-                                            {{ Auth::user()->lastname }}</h5>
-                                        <p class="text-muted mb-2">~{{ Auth::user()->username }}</p>
-                                    </div>
-
-                                    <a href="/{{ Auth::user()->username }}/profile:edit"
-                                        class="btn btn-dark btn-sm width-sm waves-effect mt-2 waves-light">Edit
-                                        Profile</a>
-
-                                    <p class="sub-header mt-3">
-                                        {{ Auth::user()->bio }}
-                                    </p>
+                                    @if (Auth::user() && Auth::user()->id == $user->id)
+                                        <div class="">
+                                            <h5 class="font-18 mb-1">{{ Auth::user()->firstname }}
+                                                {{ Auth::user()->lastname }}</h5>
+                                            <p class="text-muted mb-2">~{{ Auth::user()->username }}</p>
+                                        </div>
+                                    @else
+                                        <div class="">
+                                            <h5 class="font-18 mb-1">{{ $user->firstname }}
+                                                {{ $user->lastname }}</h5>
+                                            <p class="text-muted mb-2">~{{ $user->username }}</p>
+                                        </div>
+                                    @endif
+                                    @livewire('components.follow-button', ['frdId' => $user->id],
+                                    key($user->id))
+                                    @if (Auth::user() && Auth::user()->id == $user->id)
+                                        <p class="sub-header mt-3">
+                                            {{ Auth::user()->bio }}
+                                        </p>
+                                    @else
+                                        <p class="sub-header mt-3">
+                                            {{ $user->bio }}
+                                        </p>
+                                    @endif
                                     <p class="text-muted font-13">
-                                        <i class="mdi mdi-account-multiple-check"></i> {{ $followers }} Followers
-                                        &nbsp;&nbsp; •
-                                        &nbsp;&nbsp; {{ $following }}
-                                        Following
+                                        {{-- <i class="mdi mdi-account-multiple-check"></i> --}}
+                                        <a href="?tab=followers">{{ $followers }} Followers</a>
+                                        &nbsp;&nbsp; • &nbsp;&nbsp;
+                                        <a href="?tab=following">{{ $following }} Following</a>
                                     </p>
                                     <hr />
-
                                     <div class="text-left">
                                         @if (Auth::user()->mobile)
                                             <p class="text-muted font-13">

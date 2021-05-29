@@ -83,10 +83,11 @@
         <div class="help-box">
             <h5 class="text-muted mt-0">For Help ?</h5>
             <p class=""><span class="text-info">Email:</span>
-                <br /> support@gitleaf.com
+                <br /> support@ratinq.me
             </p>
-            <p class="mb-0"><span class="text-info">Call:</span>
-                <br /> (+94) 123 456 789
+            <p class="mb-0 text-warning">
+                <span class="text-info">RatinQ</span> completely free for personal use. Please open this link if you
+                like to <a href="">sponsor</a>.
             </p>
         </div>
 

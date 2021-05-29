@@ -178,7 +178,7 @@
         <a href="/" class="logo text-center">
             <span class="logo-lg">
                 <!-- <img src="assets/images/logo-light.png" alt="" height="18"> -->
-                <span class="logo-lg-text-light">Rating.Land</span>
+                <span class="logo-lg-text-light">Ratin<span style="color: rgb(0, 255, 191);">Q</span></span>
             </span>
             <span class="logo-sm">
                 <!-- <span class="logo-sm-text-dark" style="color: white;"><i class="mdi mdi-star  mdi-36px"></i></span> -->

@@ -16,15 +16,17 @@ class UserController extends Controller
 
     public function index($username)
     {
-        // $user = User::where('username', $username)->first(); 
-        // $bladeData = [
-        //     'user' => $user
-        // ];
-        // $count = User::where('username', $username)->count();
-        // if($count == 1)
-        //     return view('profile', $bladeData);
-        // else
-        //     return view('error.404');
+
+        $user = User::where('username', $username)->first(); 
+        $bladeData = [
+            'user' => $user
+        ];
+        $count = User::where('username', $username)->count();
+        if($count == 1)
+            return view('user.profile',['user'=>$user, 'users' => User::where('id', '!=', Auth::id())->get(), 'followers' => Follow::where('target_id', $user->id)->count(),
+            'following' => Follow::where('user_id', $user->id)->count()]);
+        else
+            return view('error.404');
     }
 
     public function profile()
