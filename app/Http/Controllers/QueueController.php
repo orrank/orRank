@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Queue;
 use Illuminate\Http\Request;
-
+use Auth;
 class QueueController extends Controller
 {
     /**
@@ -17,14 +17,17 @@ class QueueController extends Controller
         return  view('queue.create');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function createRandomIdentifier($length = 6)
     {
-        //
+
+        $characters = 'aceimnorsuvwxz';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return $randomString;
+
     }
 
     /**
@@ -35,7 +38,30 @@ class QueueController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $unq; $loopx = true;
+        while($loopx) {
+            $unq = $this->createRandomIdentifier(3) . '-' . $this->createRandomIdentifier(3);
+            if(Queue::where('identifier' , $unq)->count() == 0) {
+                $loopx = false;
+            } 
+            else {
+                $loopx = true;
+            }
+        }
+
+        $data = new Queue;
+
+        $data->identifier = $unq;
+        $data->name = $request->qname;
+        $data->description = $request->qdescription;
+        $data->logo = '';
+        $data->type = $request->Radios;
+        $data->user_id = Auth::user()->id;
+        
+        if ($data->save()) {
+            echo "added queue";
+        }
+        
     }
 
     /**

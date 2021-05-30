@@ -5,13 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use App\Models\Queue;
 use App\Models\Follow;
 use Auth;
 class UserController extends Controller
 {
     public function dashboard()
     {
-        return view('dashboard');
+        $queues = Queue::where('user_id', Auth::user()->id)->get();
+        return view('dashboard', ['queues' => $queues]);
     }
 
     public function index($username)

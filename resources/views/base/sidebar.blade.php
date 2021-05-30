@@ -25,23 +25,9 @@
                         <span class="menu-arrow"></span>
                     </a>
                     <ul class="nav-second-level" aria-expanded="false">
-
-                        <li><a href="ui-buttons.html">Buttons</a></li>
-                        <li><a href="ui-typography.html">Typography</a></li>
-                        <li><a href="ui-card.html">Card</a></li>
-                        <li><a href="ui-portlets.html">Portlets</a></li>
-                        <li><a href="ui-modals.html">Modals</a></li>
-                        <li><a href="ui-checkbox-radio.html">Checkboxs-Radios</a></li>
-                        <li><a href="ui-tabs.html">Tabs</a></li>
-                        <li><a href="ui-progressbars.html">Progress Bars</a></li>
-                        <li><a href="ui-notifications.html">Notification</a></li>
-                        <li><a href="ui-alerts.html">Alerts</a>
-                        <li><a href="ui-carousel.html">Carousel</a>
-                        <li><a href="ui-video.html">Video</a>
-                        <li><a href="ui-tooltips-popovers.html">Tooltips & Popovers</a></li>
-                        <li><a href="ui-images.html">Images</a></li>
-                        <li><a href="ui-bootstrap.html">Bootstrap UI</a></li>
-                        <li><a href="ui-grid.html">Grid</a></li>
+                        @foreach ($queues as $item)
+                        <li><a href="admin-sweet-alert2.html">{{$item->name}}</a></li>
+                        @endforeach
                     </ul>
                 </li>
 

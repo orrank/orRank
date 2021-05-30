@@ -16,20 +16,22 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Form Routes
+
 Route::group(['middleware' => 'auth'], function(){
 
     Route::get('/dashboard', [UserController::class, 'dashboard']);
-
-    Route::get('/organization/new', [OrganizationController::class, 'index']);
-
-    Route::get('/queue/new', [QueueController::class, 'index']);
 
     Route::get('/dark-mode/{state}',  [UserController::class, 'darkMode']);
 
     Route::post('/user:profile:detail:update', [UserController::class, 'infoUpdate']);
 
     Route::post('/user:profile:image:upload', [UserController::class, 'imageUpdate']);
+
+    Route::get('/organization/new', [OrganizationController::class, 'index']);
+
+    Route::get('/queue/new', [QueueController::class, 'index']);
+
+    Route::post('/queue/create', [QueueController::class, 'store']);
 
 });
 

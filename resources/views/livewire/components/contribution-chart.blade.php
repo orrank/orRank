@@ -86,15 +86,18 @@
         }
 
         .squares li[data-level="1"] {
-            background-color: #f27777;
+            background-color: rgb(245, 255, 202);
+            ;
         }
 
         .squares li[data-level="2"] {
-            background-color: #dd4242;
+            background-color: rgb(230, 207, 106);
+            ;
         }
 
         .squares li[data-level="3"] {
-            background-color: #ad0000;
+            background-color: rgb(255, 209, 4);
+            ;
         }
 
     </style>
@@ -128,9 +131,11 @@
     </div>
     <script>
         const squares = document.querySelector('.squares');
-        for (var i = 1; i < 365; i++) {
+        for (var i = 1; i < 359; i++) {
             const level = Math.floor(Math.random() * 3);
-            squares.insertAdjacentHTML('beforeend', `<li data-level="${level}"></li>`);
+            squares.insertAdjacentHTML('beforeend',
+                `<li data-placement="bottom" data-toggle="tooltip" class="tooltips" data-original-title="${level} Processes" data-level="${level}"></li>`
+                );
         }
 
     </script>
