@@ -41,7 +41,8 @@
                                             @endif
                                             @if (Auth::user()->isVerified)
                                                 <i class="mdi mdi-star-circle member-star text-success"
-                                                    title="verified user"></i>
+                                                    data-placement="right" data-toggle="tooltip" class="tooltips"
+                                                    data-original-title="verified user"></i>
                                             @endif
                                         @else
                                             @if ($user->profile_image)
@@ -55,7 +56,8 @@
                                             @endif
                                             @if ($user->isVerified)
                                                 <i class="mdi mdi-star-circle member-star text-success"
-                                                    title="verified user"></i>
+                                                    data-placement="right" data-toggle="tooltip" class="tooltips"
+                                                    data-original-title="verified user"></i>
                                             @endif
                                         @endif
                                     </div>
@@ -72,8 +74,16 @@
                                             <p class="text-muted mb-2">~{{ $user->username }}</p>
                                         </div>
                                     @endif
-                                    @livewire('components.follow-button', ['frdId' => $user->id],
-                                    key($user->id))
+                                    @if (Auth::user() && Auth::user()->id == $user->id)
+                                        <a href="/{{ Auth::user()->username }}/profile:edit"
+                                            class="btn btn-dark btn-sm width-sm waves-effect mt-2 waves-light">Edit
+                                            Profile</a>
+                                    @else
+                                        @if (Auth::user())
+                                            @livewire('components.follow-button', ['frdId' => $user->id],
+                                            key($user->id))
+                                        @endif
+                                    @endif
                                     @if (Auth::user() && Auth::user()->id == $user->id)
                                         <p class="sub-header mt-3">
                                             {{ Auth::user()->bio }}
@@ -91,32 +101,34 @@
                                     </p>
                                     <hr />
                                     <div class="text-left">
-                                        @if (Auth::user()->mobile)
-                                            <p class="text-muted font-13">
-                                                <strong>
-                                                    <i class="mdi mdi-cellphone-iphone"></i>
-                                                </strong>
-                                                <span class="ml-4">
-                                                    {{ Auth::user()->mobile }}</span>
-                                            </p>
-                                        @endif
-                                        @if (Auth::user()->email)
-                                            <p class="text-muted font-13">
-                                                <strong>
-                                                    <i class="mdi mdi-email-outline"></i>
-                                                </strong>
-                                                <span class="ml-4">
-                                                    {{ Auth::user()->email }}</span>
-                                            </p>
-                                        @endif
-                                        @if (Auth::user()->location)
-                                            <p class="text-muted font-13">
-                                                <strong>
-                                                    <i class="mdi mdi-map-marker-outline"></i>
-                                                </strong>
-                                                <span class="ml-4">
-                                                    {{ Auth::user()->location }}</span>
-                                            </p>
+                                        @if (Auth::user())
+                                            @if (Auth::user()->mobile)
+                                                <p class="text-muted font-13">
+                                                    <strong>
+                                                        <i class="mdi mdi-cellphone-iphone"></i>
+                                                    </strong>
+                                                    <span class="ml-4">
+                                                        {{ Auth::user()->mobile }}</span>
+                                                </p>
+                                            @endif
+                                            @if (Auth::user()->email)
+                                                <p class="text-muted font-13">
+                                                    <strong>
+                                                        <i class="mdi mdi-email-outline"></i>
+                                                    </strong>
+                                                    <span class="ml-4">
+                                                        {{ Auth::user()->email }}</span>
+                                                </p>
+                                            @endif
+                                            @if (Auth::user()->location)
+                                                <p class="text-muted font-13">
+                                                    <strong>
+                                                        <i class="mdi mdi-map-marker-outline"></i>
+                                                    </strong>
+                                                    <span class="ml-4">
+                                                        {{ Auth::user()->location }}</span>
+                                                </p>
+                                            @endif
                                         @endif
                                     </div>
 
@@ -185,9 +197,11 @@
                                                                 alt="{{ $user->username }}">
                                                         @endif
                                                     </div>
-                                                    <p class="inbox-item-author">{{ $user->firstname }}
-                                                        {{ $user->lastname }}</p>
-                                                    <p class="inbox-item-text">~{{ $user->username }}</p>
+                                                    <a href="/{{ $user->username }}">
+                                                        <p class="inbox-item-author">{{ $user->firstname }}
+                                                            {{ $user->lastname }}</p>
+                                                        <p class="inbox-item-text">~{{ $user->username }}</p>
+                                                    </a>
                                                     <p class="inbox-item-date">
                                                         @livewire('components.follow-button', ['frdId' => $user->id],
                                                         key($user->id))

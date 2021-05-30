@@ -8,19 +8,21 @@
                         <h4 class="header-title">Set up your Rating Queue</h4>
                         <form>
                             <div class="form-group">
-                                <label for="Organization">Rating Queue</label>
+                                <label for="Organization"><i class=" mdi mdi-tag-multiple"></i> Rating Queue Name</label>
                                 <input type="text" class="form-control" id="Organization">
                                 <span class="sub-header"></span>
                             </div>
                             <div class="form-group">
-                                <label for="description">Description</label>
+                                <label for="description"><i class="mdi mdi-white-balance-incandescent"></i>
+                                    Description</label>
                                 <textarea class="form-control" id="description"></textarea>
                                 <span class="sub-header">Describe something about your organization</span>
                             </div>
                             <div class="form-group">
                                 <label>Rating Queue Type
-                                    <a target="_blank" href="/docs/rating-types">
-                                        <i class="fas fa-question mdi-24px" title="Learn more.."></i>
+                                    <a target="_blank" data-placement="right" data-toggle="tooltip" class="tooltips"
+                                        data-original-title="Learn more about rating queue types" href="/docs/rating-types">
+                                        <i class="mdi mdi-help-circle-outline mdi-24px"></i>
                                     </a>
                                 </label>
                                 <br>

@@ -43,7 +43,7 @@ Route::group(['prefix' => '{username}', 'middleware' => ['auth']], function ($us
 
     Route::get('/dashboard', [UserController::class, 'dashboard']);
 
-    Route::get('/profile', [UserController::class, 'profile']);
+    Route::get('/profile', [UserController::class, 'index']);
 
     Route::get('/profile:edit', [UserController::class, 'update']);
     
