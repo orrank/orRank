@@ -15,10 +15,12 @@ class CreateQueuesTable extends Migration
     {
         Schema::create('queues', function (Blueprint $table) {
             $table->id();
+            $table->string('identifier');
             $table->string('name');
-            $table->text('description');
-            $table->string('logo');
+            $table->text('description')->nullable();
+            $table->string('logo')->nullable();
             $table->string('type');
+            $table->integer('interval')->nullable();
             $table->integer('user_id')->nullable();
             $table->integer('organization_id')->nullable();
             $table->timestamps();

@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    @include('base.utopbar')
+    @include('base.topbar')
     @yield('content')
     <!-- Right bar overlay-->
     <div class="rightbar-overlay"></div>

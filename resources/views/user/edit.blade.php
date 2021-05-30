@@ -10,8 +10,9 @@
                 <div class="page-title-box">
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
-                            <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
-                            <li class="breadcrumb-item"><a href="javascript: void(0);">User</a></li>
+                            <li class="breadcrumb-item"><a href="/">RatinQ</a></li>
+                            <li class="breadcrumb-item"><a
+                                href="/{{ Auth::user()->username }}">~{{ Auth::user()->username }}</a></li>
                             <li class="breadcrumb-item active">Update Profile</li>
                         </ol>
                     </div>
