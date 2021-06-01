@@ -3,11 +3,14 @@
 namespace App\Http\Livewire\Pages;
 
 use Livewire\Component;
+use Livewire\WithPagination;
 use App\Models\Queue;
 use Auth;
 
 class QueueSearch extends Component
 {
+    use WithPagination;
+
     public $search, $queues;
 
     public function searchx()

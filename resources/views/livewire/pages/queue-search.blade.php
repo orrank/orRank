@@ -6,7 +6,7 @@
                         class="fas fa-search"></i></button>
             </span>
             <input type="text" wire:model="search" class="form-control" placeholder="Search">
-            <span class="input-group-append">{{$search}}
+            <span class="input-group-append">{{ $search }}
                 <a href="/queue/new" class="btn waves-effect waves-light btn-dark"><i
                         class="mdi mdi-shield-star-outline"></i> New Queue</a>
             </span>

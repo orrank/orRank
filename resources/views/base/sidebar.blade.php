@@ -20,7 +20,7 @@
                 <li>
                     <a href="{{ '/' . Auth::user()->username . '/queues/' }}">
                         <i class="mdi mdi-invert-colors"></i>
-                        <span class="badge badge-success badge-pill float-right">2</span>
+                        <span class="badge badge-dark badge-pill float-right">2</span>
                         <span> Rating Queues</span>
                     </a>
                 </li>
