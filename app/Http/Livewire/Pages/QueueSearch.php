@@ -23,6 +23,12 @@ class QueueSearch extends Component
     }
     public function render()
     {
+        if ($this->search != "") {
+            $this->queues = Queue::where('name', 'LIKE', '%'.$this->search.'%')->get();
+        }
+        else {
+            $this->queues = Queue::where('user_id', Auth::user()->id)->get();
+        }
         return view('livewire.pages.queue-search');
     }
 }
