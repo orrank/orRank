@@ -1,8 +1,23 @@
 @extends('layouts.dashboard')
 @section('content')
     <div class="row">
+        <div class="col-12">
+            <div class="page-title-box">
+                <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                        <li class="breadcrumb-item"><a href="/">RatinQ</a></li>
+                        <li class="breadcrumb-item"><a
+                                href="/{{ Auth::user()->username }}">~{{ Auth::user()->username }}</a></li>
+                        <li class="breadcrumb-item active">New Rating Queue</li>
+                    </ol>
+                </div>
+                <h4 class="page-title">Create Rating Queue</h4>
+            </div>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-sm-12">
-            <div class="card-box" style="margin-top: 30px;">
+            <div class="card-box">
                 <div class="row">
                     <div class="col-lg-6 mt-4">
                         <h4 class="header-title">Set up your Rating Queue</h4>
@@ -43,7 +58,7 @@
                                 <div class="form-check  form-check-inline">
                                     <input class="form-check-input" type="radio" name="Radios" id="Radios3" value="ranger">
                                     <label class="form-check-label" for="Radios3">
-                                       Range Rating
+                                        Range Rating
                                     </label>
                                 </div>
                             </div>

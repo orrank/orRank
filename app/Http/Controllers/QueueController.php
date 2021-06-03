@@ -72,7 +72,7 @@ class QueueController extends Controller
      */
     public function show(Queue $queue)
     {
-        //
+        return view('queue.display');
     }
 
     /**

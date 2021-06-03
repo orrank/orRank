@@ -13,22 +13,16 @@
                 <li>
                     <a href="{{ '/' . Auth::user()->username . '/dashboard/' }}">
                         <i class="mdi mdi-view-dashboard"></i>
-                        <span class="badge badge-success badge-pill float-right">2</span>
                         <span> Dashboard </span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="javascript: void(0);" class="waves-effect waves-light">
+                    <a href="{{ '/' . Auth::user()->username . '/queues/' }}">
                         <i class="mdi mdi-invert-colors"></i>
-                        <span> Rating Queue</span>
-                        <span class="menu-arrow"></span>
+                        <span class="badge badge-dark badge-pill float-right">2</span>
+                        <span> Rating Queues</span>
                     </a>
-                    <ul class="nav-second-level" aria-expanded="false">
-                        @foreach ($queues as $item)
-                        <li><a href="admin-sweet-alert2.html">{{$item->name}}</a></li>
-                        @endforeach
-                    </ul>
                 </li>
 
                 <li>

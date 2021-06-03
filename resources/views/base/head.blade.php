@@ -8,5 +8,5 @@
 <meta content="RatinQ" name="author" />
 <meta content="Analyze Rating & get feedback to you & your organization" name="description" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<link rel="shortcut icon" href="assets/images/favicon.ico">
+<link rel="shortcut icon" href="{{ asset('assets/images/Ratinq.ico') }}">
 @livewireStyles
