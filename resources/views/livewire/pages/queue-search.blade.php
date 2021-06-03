@@ -16,13 +16,17 @@
         <div class="col-xl-4 col-md-6">
             <div class="card widget-box-three">
                 <div class="card-body">
-                    <div class="bg-icon float-left avatar-lg text-center bg-light rounded-circle">
-                        <i class="ti-star h2 text-muted m-0 avatar-title"></i>
-                    </div>
-                    <div class="text-right">
-                        <p class="font-weight-medium text-truncate">{{ $queue->name }}</p>
-                        <span class="sub-title">{{ $queue->description }}</span>
-                    </div>
+                    <a href="/{{ Auth::user()->username }}/{{ $queue->name }}">
+                        <div class="bg-icon float-left avatar-lg text-center bg-light rounded-circle">
+                            <i class="ti-star h2 text-muted m-0 avatar-title"></i>
+                        </div>
+                        <div class="text-right">
+
+                            <p class="font-weight-medium text-truncate">{{ $queue->name }}</p>
+
+                            <span class="sub-title">{{ $queue->description }}</span>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
