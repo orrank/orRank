@@ -7,19 +7,24 @@ use Illuminate\Http\Request;
 use Auth;
 class QueueController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         return  view('queue.create');
     }
 
+    public function show()
+    {
+        return view('queue.show');
+    }
+
+    public function list()
+    {
+        return view('queue.list');
+    }
+
     public function createRandomIdentifier($length = 6)
     {
-
         $characters = 'aceimnorsuvwxz';
         $charactersLength = strlen($characters);
         $randomString = '';
@@ -27,7 +32,6 @@ class QueueController extends Controller
             $randomString .= $characters[rand(0, $charactersLength - 1)];
         }
         return $randomString;
-
     }
 
     /**
@@ -64,16 +68,7 @@ class QueueController extends Controller
         
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Queue  $queue
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Queue $queue)
-    {
-        return view('queue.display');
-    }
+
 
     /**
      * Show the form for editing the specified resource.
