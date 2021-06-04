@@ -3,10 +3,14 @@
 
 <head>
     @include('base.head')
-
-    @if (Auth::user()->isDark == 0)
-        <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
-        <link href="{{ asset('assets/css/app.min.css') }}" rel="stylesheet" type="text/css" />
+    @if (Auth::user())
+        @if (Auth::user()->isDark == 0)
+            <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+            <link href="{{ asset('assets/css/app.min.css') }}" rel="stylesheet" type="text/css" />
+        @else
+            <link href="{{ asset('assets/css/bootstrap-dark.min.css') }}" rel="stylesheet" type="text/css" />
+            <link href="{{ asset('assets/css/app-dark.min.css') }}" rel="stylesheet" type="text/css" />
+        @endif
     @else
         <link href="{{ asset('assets/css/bootstrap-dark.min.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('assets/css/app-dark.min.css') }}" rel="stylesheet" type="text/css" />
@@ -19,7 +23,9 @@
 <body>
     <div id="wrapper">
         @include('base.topbar')
-        @include('base.sidebar')
+        @if (Auth::user())
+            @include('base.sidebar')
+        @endif
         <div class="content-page">
             <div class="content">
                 <div class="container-fluid">

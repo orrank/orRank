@@ -11,23 +11,20 @@ class QueueSearch extends Component
 {
     use WithPagination;
 
-    public $search, $queues;
+    public $search, $queues, $userid;
 
-    public function searchx()
-    {
-        $this->search = $this->search;
-    }
     public function mount()     
     {
-        $this->queues = Queue::where('user_id', Auth::user()->id)->get();
+        $this->queues = Queue::where('user_id', $this->userid)->get();
     }
     public function render()
     {
         if ($this->search != "") {
-            $this->queues = Queue::where('name', 'LIKE', '%'.$this->search.'%')->get();
+            $this->queues = Queue::where([['user_id', '=', $this->userid],
+            ['name', 'LIKE', '%'.$this->search.'%']])->get();
         }
         else {
-            $this->queues = Queue::where('user_id', Auth::user()->id)->get();
+            $this->queues = Queue::where('user_id', $this->userid)->get();
         }
         return view('livewire.pages.queue-search');
     }

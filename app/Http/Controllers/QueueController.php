@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Queue;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Auth;
 class QueueController extends Controller
@@ -12,15 +13,19 @@ class QueueController extends Controller
     {
         return  view('queue.create');
     }
-
-    public function show()
+    
+    public function list($username)
     {
-        return view('queue.show');
+        return view('queue.list', [
+            'user' => User::where('username', $username)->first()
+        ]);
     }
 
-    public function list()
+    public function show($username)
     {
-        return view('queue.list');
+        return view('queue.show', [
+            'user' => User::where('username', $username)->first()
+        ]);
     }
 
     public function createRandomIdentifier($length = 6)

@@ -6,8 +6,7 @@
                 <div class="page-title-right">
                     <ol class="breadcrumb m-0">
                         <li class="breadcrumb-item"><a href="/">RatinQ</a></li>
-                        <li class="breadcrumb-item"><a
-                                href="/{{ Auth::user()->username }}">~{{ Auth::user()->username }}</a></li>
+                        <li class="breadcrumb-item"><a href="/{{ $user->username }}">~{{ $user->username }}</a></li>
                         <li class="breadcrumb-item active">Display Rating Queues</li>
                     </ol>
                 </div>
@@ -15,5 +14,5 @@
             </div>
         </div>
     </div>
-    @livewire('pages.queue-search')
+    @livewire('pages.queue-search', ['userid' => $user->id])
 @stop

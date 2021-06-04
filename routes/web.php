@@ -41,7 +41,6 @@ Route::get('/user:image:remove', [UserController::class, 'imageRemove']);
 
 Route::get('/{username}', [UserController::class, 'index']);
 
-Route::get('/{username}/{queue}', [QueueController::class, 'show']);
 
 Route::group(['prefix' => '{username}', 'middleware' => ['auth']], function ($username) {
 
@@ -52,6 +51,8 @@ Route::group(['prefix' => '{username}', 'middleware' => ['auth']], function ($us
     Route::get('/profile:edit', [UserController::class, 'update']);
 
     Route::get('/queues', [QueueController::class, 'list']);
+
+    Route::get('/{queue}', [QueueController::class, 'show']);
     
 });
 
