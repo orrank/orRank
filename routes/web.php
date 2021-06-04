@@ -16,7 +16,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 Route::group(['middleware' => 'auth'], function(){
 
     Route::get('/dashboard', [UserController::class, 'dashboard']);
@@ -32,7 +31,6 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/queue/new', [QueueController::class, 'index']);
 
     Route::post('/queue/create', [QueueController::class, 'store']);
-
 });
 
 Route::post('/user:registration', [UserController::class, 'store']);
@@ -40,7 +38,6 @@ Route::post('/user:registration', [UserController::class, 'store']);
 Route::get('/user:image:remove', [UserController::class, 'imageRemove']);
 
 Route::get('/{username}', [UserController::class, 'index']);
-
 
 Route::group(['prefix' => '{username}', 'middleware' => ['auth']], function ($username) {
 
@@ -50,8 +47,7 @@ Route::group(['prefix' => '{username}', 'middleware' => ['auth']], function ($us
 
     Route::get('/profile:edit', [UserController::class, 'update']);
 
-    Route::get('/queues', [QueueController::class, 'show']);
-    
+    Route::get('/queues', [QueueController::class, 'list']);
+
+    Route::get('/{queue}', [QueueController::class, 'show']);
 });
-
-
