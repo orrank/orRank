@@ -17,7 +17,7 @@
     @endif
     <link href="{{ asset('assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/libs/toastr/toastr.min.css') }}" rel="stylesheet" type="text/css" />
-
+    <link href="{{ asset('assets/libs/tooltipster/tooltipster.bundle.min.css') }}" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -72,6 +72,8 @@
     <script src="{{ asset('assets/js/app.min.js') }}"></script>
 
     <script src="{{ asset('assets/libs/toastr/toastr.min.js') }}"></script>
+
+    <script src="{{ asset('assets/libs/tooltipster/tooltipster.bundle.min.js') }}"></script>
 
     @livewireScripts
 </body>

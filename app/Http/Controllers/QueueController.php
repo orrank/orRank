@@ -21,11 +21,18 @@ class QueueController extends Controller
         ]);
     }
 
-    public function show($username)
+    public function show($username, $queue)
     {
-        return view('queue.show', [
-            'user' => User::where('username', $username)->first()
-        ]);
+        $queue = Queue::where('identifier', $queue)->first();
+        if ($queue) {
+            return view('queue.show', [
+                'user' => User::where('username', $username)->first(),
+                'queue' => $queue
+            ]);
+        }
+        else
+            return view('error.404');
+        
     }
 
     public function createRandomIdentifier($length = 6)

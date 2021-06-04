@@ -14,9 +14,9 @@
     </div><br><br><br>
     @forelse ($queues as $queue)
         <div class="col-xl-4 col-md-6">
-            <div class="card widget-box-three">
+            <div class="card widget-box-three border border-dark">
                 <div class="card-body">
-                    <a href="/{{ Auth::user()->username }}/{{ $queue->name }}">
+                    <a href="/{{ $user->username }}/{{ $queue->identifier }}">
                         <div class="bg-icon float-left avatar-lg text-center bg-light rounded-circle">
                             <i class="ti-star h2 text-muted m-0 avatar-title"></i>
                         </div>
@@ -35,7 +35,7 @@
             <div class="card widget-box-three">
                 <div class="card-body">
                     <center>
-                        <h6>~{{ Auth::user()->username }} doesn’t have any Queues that match. </h6>
+                        <h6>~{{ $user->username }} doesn’t have any Queues that match. </h6>
                     </center>
                 </div>
             </div>
