@@ -8,7 +8,7 @@
             height: 256,
             colorDark: "#000000",
             colorLight: "#ffffff",
-            logo: "{{ asset('assets/images/Rating.Land.svg') }}",
+            logo: "{{ asset('assets/images/Ratinq.svg') }}",
             logoWidth: 50,
             logoHeight: 50,
         };
