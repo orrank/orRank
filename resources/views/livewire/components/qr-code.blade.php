@@ -1,5 +1,9 @@
 <div>
-    <div id="qrcode"></div>
+    <div style="padding: 15px; background-color: white;">
+        <center>
+            <div id="qrcode"></div>
+        </center>
+    </div>
     <script src="{{ asset('assets/js/easy.qrcode.min.js') }}"></script>
     <script type="text/javascript">
         var options = {

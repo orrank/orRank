@@ -50,17 +50,47 @@
 
                     </div>
                     <div class="tab-pane" id="profile-b1" role="tabpanel" aria-labelledby="profile-b1-tab">
-                        @livewire('components.qr-code', ['uniqueid' => $queue->identifier])
+                        <div class="row">
+                            <div class="col-xl-8 col-md-6">
+
+                            </div>
+                            <div class="col-xl-4 col-md-6">
+                                @livewire('components.qr-code', ['uniqueid' => $queue->identifier])
+                            </div>
+                        </div>
                     </div>
                     <div class="tab-pane" id="setting-b1" role="tabpanel" aria-labelledby="setting-b1-tab">
-                        <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
-                            imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer
-                            tincidunt.Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean
-                            leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
-                        <p class="mb-0">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
-                            dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
-                            ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla
-                            consequat massa quis enim.</p>
+                        <h5>General Info</h5>
+                        <hr>
+                        <div class="row">
+                            <div class="col-6">
+                                <form action="">
+                                    <div class="input-group mt-3">
+                                        <input type="text" id="qname" name="qname" class="form-control"
+                                            value="{{ $queue->name }}" placeholder="Queue Name" required>
+                                        <span class="input-group-append">
+                                            <button type="submit"
+                                                class="btn waves-effect waves-light btn-dark">Rename</button>
+                                        </span>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <h5>Danger Zone</h5>
+                        <hr>
+                        <div class="card widget-box-one border border-danger bg-soft-danger">
+                            <div class="card-body">
+                                <strong>Transfer ownership</strong>
+                                <p>Transfer this queue to another user or to an organization where you have the ability to
+                                    create repositories.</p>
+                                <button class="btn btn-danger">Transfer</button>
+
+                                <hr>
+                                <strong>Delete this Queue</strong>
+                                <p>Once you delete a queue, there is no going back. Please be certain.</p>
+                                <button class="btn btn-danger">Delete this queue</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
