@@ -178,7 +178,7 @@
         <a href="/" class="logo text-center">
             <span class="logo-lg">
                 @if (Auth::user())
-                    <span class="logo-lg-text-light">Ratin<span style="color: rgb(0, 255, 191);">Q</span></span>
+                    <span class="logo-lg-text-light">Or<span style="color: rgb(0, 255, 191);">RanK</span></span>
                 @else
                     <img src="{{ asset('assets/images/RatinQ_white.svg') }}" style="margin-top: 10px;" height="50">
                 @endif
