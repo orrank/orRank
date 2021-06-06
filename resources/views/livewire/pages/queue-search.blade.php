@@ -18,13 +18,14 @@
                 <div class="card-body">
                     <a href="/{{ $user->username }}/{{ $queue->identifier }}">
                         <div class="bg-icon float-left avatar-lg text-center bg-light rounded-circle">
-                            <i class="ti-star h2 text-muted m-0 avatar-title"></i>
+                            <i class="ti-star h2 text-warning m-0 avatar-title"></i>
                         </div>
                         <div class="text-right">
 
-                            <p class="font-weight-medium text-truncate">{{ $queue->name }}</p>
+                            <p class="font-weight-medium text-dark text-truncate">{{ $queue->name }}</p>
 
-                            <span class="sub-title">{{ $queue->description }}</span>
+                            <span
+                                class="sub-title text-muted">{{ substr($queue->description, 0, 30) . '...' }}</span>
                         </div>
                     </a>
                 </div>

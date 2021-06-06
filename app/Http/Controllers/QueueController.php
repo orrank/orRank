@@ -75,9 +75,10 @@ class QueueController extends Controller
         $data->user_id = Auth::user()->id;
         
         if ($data->save()) {
-            echo "added queue";
-        }
-        
+            //$this->dispatchBrowserEvent( 'alert', ['type' => 'success',  'message' => 'Successfully added queue']);
+            $request->session()->flash('success', 'Successfully added queue');
+            return redirect('/'.Auth::user()->username.'/'.$unq);
+        } 
     }
 
 

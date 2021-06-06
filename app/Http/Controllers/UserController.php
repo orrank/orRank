@@ -19,7 +19,7 @@ class UserController extends Controller
     public function index($username)
     {
         $user = User::where('username', $username)->first(); 
-        $count = $user->count();
+        $count = User::where('username', $username)->count();
         if($count == 1)
             return view('user.profile',['user'=>$user, 'users' => User::where('id', '!=', Auth::id())->get(), 'followers' => Follow::where('target_id', $user->id)->count(),
             'following' => Follow::where('user_id', $user->id)->count()]);

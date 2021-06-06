@@ -25,7 +25,7 @@
                             @csrf
                             <div class="form-group">
                                 <label for="Organization"><i class=" mdi mdi-tag-multiple"></i> Rating Queue Name</label>
-                                <input type="text" class="form-control" name="qname" id="Organization">
+                                <input type="text" class="form-control" name="qname" id="Organization" autocomplete="off">
                                 <span class="sub-header"></span>
                             </div>
                             <div class="form-group">
@@ -88,8 +88,6 @@
                         </center>
                     </div>
                 </div>
-
-
             </div>
         </div>
     </div>

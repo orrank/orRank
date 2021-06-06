@@ -177,15 +177,18 @@
     <div class="logo-box">
         <a href="/" class="logo text-center">
             <span class="logo-lg">
-                <!-- <img src="assets/images/logo-light.png" alt="" height="18"> -->
-                <span class="logo-lg-text-light">Ratin<span style="color: rgb(0, 255, 191);">Q</span></span>
+                @if (Auth::user())
+                    <span class="logo-lg-text-light">Or<span style="color: rgb(0, 255, 191);">RanK</span></span>
+                @else
+                    <img src="{{ asset('assets/images/RatinQ_white.svg') }}" style="margin-top: 10px;" height="50">
+                @endif
             </span>
             <span class="logo-sm">
                 <!-- <span class="logo-sm-text-dark" style="color: white;"><i class="mdi mdi-star  mdi-36px"></i></span> -->
                 @if (Auth::user())
-                    <img src="{{ asset('assets/images/Rating.Land.svg') }}" alt="logo" height="45" />
+                    <img src="{{ asset('assets/images/RatinQ_white.svg') }}" alt="logo" height="45" />
                 @else
-                    <img src="{{ asset('assets/images/Rating.Land.svg') }}" style="margin-top: 10px;" alt="logo"
+                    <img src="{{ asset('assets/images/RatinQ_white.svg') }}" style="margin-top: 10px;" alt="logo"
                         height="45" />
                 @endif
 
@@ -194,12 +197,17 @@
     </div>
 
     <ul class="list-unstyled topnav-menu topnav-menu-left m-0">
-        <li>
-            <button class="button-menu-mobile waves-effect">
-                <i class="mdi mdi-menu"></i>
-            </button>
-        </li>
-
+        @if (Auth::user())
+            <li>
+                <button class="button-menu-mobile waves-effect">
+                    <i class="mdi mdi-menu"></i>
+                </button>
+            </li>
+        @else
+            <li>
+                &nbsp;&nbsp;&nbsp;
+            </li>
+        @endif
         <li class="d-none d-sm-block">
             <form class="app-search">
                 <div class="app-search-box">
