@@ -25,18 +25,10 @@ jobs:
     - name: 🔨 Install dependencies
       run: composer install --prefer-dist --no-progress
       
-    - name: 🔨 Setup Laravel
-      run: |
-        mv public public_html
-      
-  web-deploy:
-    name: 🎉 Deploy
-    runs-on: ubuntu-latest
-    steps:
-    - name: 🚚 Get latest code
-      uses: actions/checkout@v2
-    
-    - name: 📂 Sync files
+    - name: 🔨 Setup Laravel move directory
+      run: mv public public_html
+        
+    - name: 🚀 Deploy 📂 Sync files 🎉
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
         server: ftp.orrank.com
