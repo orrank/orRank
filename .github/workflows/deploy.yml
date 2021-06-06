@@ -24,7 +24,10 @@ jobs:
 
     - name: 🔨 Install dependencies
       run: composer install --prefer-dist --no-progress
-           mv public public_html
+      
+    - name: 🔨 Setup Laravel
+      run: |
+        mv public public_html
       
   web-deploy:
     name: 🎉 Deploy
