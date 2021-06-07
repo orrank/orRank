@@ -14,13 +14,13 @@ jobs:
         run: composer validate --strict
 
       - name: 🔨 Install Composer dependencies
-        run: composer install --no-dev --optimize-autoloader
+        run: composer install
 
       - name: 🔨 Install NPM dependencies Setup Laravel move directory
         run: npm install && npm run dev
 
-      # - name: 🔨 Setup Laravel directory structure
-      #   run: mv
+      - name: 🔨 Setup Laravel Env
+        run: cp .env.example .env
 
       - name: 🚀 Deploy 📂 Sync files 🎉
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
