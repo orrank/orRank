@@ -22,11 +22,14 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-php-
 
-    - name: 🔨 Install dependencies
+    - name: 🔨 Install Composer dependencies
       run: composer install --prefer-dist --no-progress
       
-    - name: 🔨 Setup Laravel move directory
-      run: mv public public_html
+    - name: 🔨 Install NPM dependencies Setup Laravel move directory
+      run: npm install && npm run dev
+      
+   # - name: 🔨 Setup Laravel directory structure
+   #   run: mv 
         
     - name: 🚀 Deploy 📂 Sync files 🎉
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
