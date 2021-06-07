@@ -13,20 +13,20 @@ jobs:
     - name: 🐛 Validate composer.json and composer.lock
       run: composer validate --strict
 
-    - name: 📂 Cache Composer packages
-      id: composer-cache
-      uses: actions/cache@v2
-      with:
-        path: vendor
-        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-php-
+#    - name: 📂 Cache Composer packages
+#      id: composer-cache
+#      uses: actions/cache@v2
+#      with:
+#        path: vendor
+#        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+#        restore-keys: |
+#          ${{ runner.os }}-php-
 
-    - name: 🔨 Install dependencies
-      run: composer install --prefer-dist --no-progress
+#    - name: 🔨 Install dependencies
+#      run: composer install --prefer-dist --no-progress
       
-    - name: 🔨 Setup Laravel move directory
-      run: mv public public_html
+#    - name: 🔨 Setup Laravel move directory
+#      run: mv public public_html
         
     - name: 🚀 Deploy 📂 Sync files 🎉
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
@@ -34,3 +34,4 @@ jobs:
         server: ftp.orrank.com
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
+        server-dir: public_html/Laravel/
