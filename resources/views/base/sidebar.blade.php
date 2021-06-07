@@ -63,7 +63,7 @@
         <div class="help-box">
             <h5 class="text-muted mt-0">For Help ?</h5>
             <p class=""><span class="text-info">Email:</span>
-                <br /> <a href="mailto:support@orrank.com" class="text-info">support@orrank.com</a>
+                <a href="mailto:support@orrank.com" class="text-info">support@orrank.com</a>
             </p>
             <p class="mb-0 text-warning">
                 <span class="text-info">OrRank</span> free for personal use. Please open this link if you
