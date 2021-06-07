@@ -180,15 +180,15 @@
                 @if (Auth::user())
                     <span class="logo-lg-text-light">Or<span style="color: rgb(0, 255, 191);">RanK</span></span>
                 @else
-                    <img src="{{ asset('assets/images/RatinQ_white.svg') }}" style="margin-top: 10px;" height="50">
+                    <img src="{{ asset('assets/images/OrRank_white.svg') }}" style="margin-top: 10px;" height="50">
                 @endif
             </span>
             <span class="logo-sm">
                 <!-- <span class="logo-sm-text-dark" style="color: white;"><i class="mdi mdi-star  mdi-36px"></i></span> -->
                 @if (Auth::user())
-                    <img src="{{ asset('assets/images/RatinQ_white.svg') }}" alt="logo" height="45" />
+                    <img src="{{ asset('assets/images/OrRank_white.svg') }}" alt="logo" height="45" />
                 @else
-                    <img src="{{ asset('assets/images/RatinQ_white.svg') }}" style="margin-top: 10px;" alt="logo"
+                    <img src="{{ asset('assets/images/OrRank_white.svg') }}" style="margin-top: 10px;" alt="logo"
                         height="45" />
                 @endif
 

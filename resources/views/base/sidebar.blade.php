@@ -63,10 +63,10 @@
         <div class="help-box">
             <h5 class="text-muted mt-0">For Help ?</h5>
             <p class=""><span class="text-info">Email:</span>
-                <br /> support@ratinq.me
+                <a href="mailto:support@orrank.com" class="text-info">support@orrank.com</a>
             </p>
             <p class="mb-0 text-warning">
-                <span class="text-info">RatinQ</span> completely free for personal use. Please open this link if you
+                <span class="text-info">OrRank</span> free for personal use. Please open this link if you
                 like to <a href="">sponsor</a>.
             </p>
         </div>

@@ -7,7 +7,7 @@
                     <div class="text-center">
                         <div class="mt-2 mb-2">
                             <a href="/" class="text-success">
-                                <span><img src="{{ asset('assets/images/RatinQ_black.svg') }}" alt="" height="80"></span>
+                                <span><img src="{{ asset('assets/images/OrRank_black.svg') }}" alt="" height="80"></span>
                             </a>
                         </div>
                     </div>
