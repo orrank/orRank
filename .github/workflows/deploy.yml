@@ -19,8 +19,8 @@ jobs:
       - name: 🔨 Install NPM dependencies Setup Laravel move directory
         run: npm install && npm run dev
 
-      - name: 🔨 Setup Laravel Env
-        run: cp .env.example .env
+      #- name: 🔨 Setup Laravel Env
+      #  run: cp .env.example .env
 
       - name: 🚀 Deploy 📂 Sync files 🎉
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
@@ -29,3 +29,7 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: public_html/Laravel/
+          exclude: vendor/**
+          - vendor/**/*
+          - node_modules/**
+          - node_modules/**/*
