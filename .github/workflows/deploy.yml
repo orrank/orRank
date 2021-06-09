@@ -19,22 +19,22 @@ jobs:
       - name: 🔨 Install NPM dependencies Setup Laravel move directory
         run: npm install && npm run dev
 
-      #- name: 🔨 Setup Laravel Env
-      #  run: cp .env.example .env
+      - name: 🔨 Clear Laravel cache
+        run: php artisan config:cache
 
-      - name: 🚀 Deploy 📂 Sync files 🎉
-        uses: SamKirkland/FTP-Deploy-Action@4.0.0
-        with:
-          server: ftp.orrank.com
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: public_html/Laravel/
-          exclude: vendor/**
-            - vendor/**/*
-            - node_modules/**
-            - node_modules/**/*
-            - .github/**/*
-            - .git/**/*
-            - public/**/*
-            - bootstrap/**
-            - bootstrap/**/*
+      #- name: 🚀 Deploy 📂 Sync files 🎉
+      #  uses: SamKirkland/FTP-Deploy-Action@4.0.0
+      #  with:
+      #    server: ftp.orrank.com
+      #    username: ${{ secrets.FTP_USERNAME }}
+      #    password: ${{ secrets.FTP_PASSWORD }}
+      #    server-dir: public_html/Laravel/
+      #    exclude: vendor/**
+      #      - vendor/**/*
+      #      - node_modules/**
+      #      - node_modules/**/*
+      #      - .github/**/*
+      #      - .git/**/*
+      #      - public/**/*
+      #      - bootstrap/**
+      #      - bootstrap/**/*
