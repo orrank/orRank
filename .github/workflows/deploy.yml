@@ -13,22 +13,25 @@ jobs:
       - name: 🐛 Validate composer.json and composer.lock
         run: composer validate --strict
 
-      - name: 🔨 Install Composer dependencies
-        run: composer install
+      #- name: 🔨 Install Composer dependencies
+      #  run: composer install
 
-      - name: 🔨 Install NPM dependencies Setup Laravel move directory
-        run: npm install && npm run dev
+      #- name: 🔨 Install NPM dependencies Setup Laravel move directory
+      #  run: npm install && npm run dev
 
-      - name: 🔨 Clear Laravel cache
-        run: php artisan config:cache
+      - name: 🔨 Remove bootstrp
+        run: rm -rf bootstrap
 
-      #- name: 🚀 Deploy 📂 Sync files 🎉
-      #  uses: SamKirkland/FTP-Deploy-Action@4.0.0
-      #  with:
-      #    server: ftp.orrank.com
-      #    username: ${{ secrets.FTP_USERNAME }}
-      #    password: ${{ secrets.FTP_PASSWORD }}
-      #    server-dir: public_html/Laravel/
+      - name: 🔨 Remove public
+        run: rm -rf public
+
+      - name: 🚀 Deploy 📂 Sync files 🎉
+        uses: SamKirkland/FTP-Deploy-Action@4.0.0
+        with:
+          server: ftp.orrank.com
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: public_html/Laravel/
       #    exclude: vendor/**
       #      - vendor/**/*
       #      - node_modules/**
