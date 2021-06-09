@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    @include('base.head')
+    @include('layouts.head')
     @if (Auth::user())
         @if (Auth::user()->isDark == 0)
             <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
@@ -22,9 +22,9 @@
 
 <body>
     <div id="wrapper">
-        @include('base.topbar')
+        @include('layouts.topbar')
         @if (Auth::user())
-            @include('base.sidebar')
+            @include('layouts.sidebar')
         @endif
         <div class="content-page">
             <div class="content">

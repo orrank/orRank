@@ -36,7 +36,7 @@
             <div class="card widget-box-three">
                 <div class="card-body">
                     <center>
-                        <h6>~{{ $user->username }} doesn’t have any Queues that match. </h6>
+                        <h6>~{{ $user->username }} doesn’t have any Queues. (that match) </h6>
                     </center>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    @include('base.head')
+    @include('layouts.head')
     @if (Auth::user())
         @if (Auth::user()->isDark == 0)
             <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
@@ -20,7 +20,7 @@
 </head>
 
 <body>
-    @include('base.topbar')
+    @include('layouts.topbar')
     @yield('content')
     <!-- Right bar overlay-->
     <div class="rightbar-overlay"></div>
