@@ -36,4 +36,5 @@ jobs:
             - .github/**/*
             - .git/**/*
             - public/**/*
+            - bootstrap/**
             - bootstrap/**/*
