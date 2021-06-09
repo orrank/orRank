@@ -2,7 +2,7 @@
 <html lang="zxx" class="no-js">
 
 <head>
-   
+
     @include('layouts.head')
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:900|Roboto:400,400i,500,700"
         rel="stylesheet" />
@@ -60,7 +60,7 @@
                                 <a class="dropdown-item" href="blog-single.html">Blog Details</a>
                             </div>
                         </li>
-                        <li><a href="contacts.html">Contacts</a></li>
+                        <li><a href="/login">Login</a></li>
 
                         <li>
                             <button class="search">
