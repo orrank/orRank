@@ -62,7 +62,9 @@
                         </div>
                         <div class="col-lg-2"></div>
                         <div class="col-lg-4 col-md-6">
-                            <h6>Profile picture</h6>
+                            <h6>Profile picture 
+                                <i class="mdi mdi-help-circle-outline" data-placement="right" data-toggle="tooltip" class="tooltips"
+                                data-original-title="We've create your avatar using first letter from your first name and last name"></i></h6>
                             <center>
                                 @if (Auth::user()->profile_image)
                                     <img class="rounded-circle" width="200"

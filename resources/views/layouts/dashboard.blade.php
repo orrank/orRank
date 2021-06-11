@@ -2,7 +2,9 @@
 <html>
 
 <head>
+
     @include('layouts.head')
+
     @if (Auth::user())
         @if (Auth::user()->isDark == 0)
             <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
@@ -98,7 +100,9 @@
             </script>
         @endif
     @endforeach
+
     @livewireScripts
+
 </body>
 
 </html>

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="{{ asset('assets/images/RatinQ_white.svg') }}" sizes="any" type="image/svg+xml">
+    <link rel="icon" href="{{ asset('assets/images/OrRank_white.svg') }}" sizes="any" type="image/svg+xml">
     <title>404</title>
     <style>
         * {
@@ -58,7 +58,7 @@
     <div id="main">
         <div class="fof">
             <a href="/">
-                <img height="100" src="{{ asset('assets/images/RatinQ_black.svg') }}" />
+                <img height="100" src="{{ asset('assets/images/OrRank_black.svg') }}" />
             </a>
             <br><br>
             <h1>404</h1>

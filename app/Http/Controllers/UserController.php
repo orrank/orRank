@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use App\Models\Queue;
 use App\Models\Follow;
-use Auth;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+
 class UserController extends Controller
 {
     public function dashboard()
@@ -106,34 +107,5 @@ class UserController extends Controller
 
         if ($data->save())
             return redirect()->back();
-    }
-
-    public function store(Request $request) {
-
-        $request->validate(
-            [
-                'username'          =>      'required|string|max:30|unique:users',
-                'email'             =>      'required|email|unique:users,email',
-                'password'          =>      'required|alpha_num|min:6',
-            ]
-        );
-
-        $dataArray      =       array(
-            "username"      =>          $request->username,
-            "email"         =>          $request->email,
-            "firstname"     =>          $request->username,
-            "lastname"      =>          $request->username,
-            "password"      =>          Hash::make($request->password)
-        );
-
-        $user  =  User::create($dataArray);
-
-        if(!is_null($user)) {
-            return back()->with("success", "Success! Registration completed");
-        }
-
-        else {
-            return back()->with("failed", "Alert! Failed to register");
-        }
     }
 }

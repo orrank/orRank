@@ -56,7 +56,9 @@
             </script>
         @endif
     @endforeach
+
     @livewireScripts
+
 </body>
 
 </html>

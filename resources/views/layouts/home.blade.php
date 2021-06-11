@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<html lang="zxx" class="no-js">
+<html>
 
 <head>
 
     @include('layouts.head')
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:900|Roboto:400,400i,500,700"
         rel="stylesheet" />
-    <!--
-      CSS
-      =============================================
-    -->
+    <link href="https://fonts.googleapis.com/css2?family=Merienda&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="assets/home/css/linearicons.css" />
     <link rel="stylesheet" href="assets/home/css/font-awesome.min.css" />
     <link rel="stylesheet" href="assets/home/css/bootstrap.css" />
@@ -40,7 +38,6 @@
                     <ul class="navbar-nav">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About</a></li>
-                        <li><a href="courses.html">Courses</a></li>
                         <!-- Dropdown -->
                         <li class="dropdown">
                             <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -147,10 +144,10 @@
             </div>
             <div class="footer-bottom row align-items-center">
                 <p class="footer-text m-0 col-lg-8 col-md-12">
-                    Copyright &copy;<script>
+                    &copy;<script>
                         document.write(new Date().getFullYear());
 
-                    </script> orRank
+                    </script> <a target="_blank" href="https://gitleaf.com">GitLeaf</a>, Inc.
                 </p>
                 <div class="col-lg-4 col-md-12 footer-social">
                     <a href="#"><i class="fa fa-facebook"></i></a>

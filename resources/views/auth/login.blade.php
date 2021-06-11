@@ -58,7 +58,6 @@
                     <!-- end card-body -->
                 </div>
                 <!-- end card -->
-                <x-jet-validation-errors />
 
                 <div class="row mt-5">
                     <div class="col-sm-12 text-center">

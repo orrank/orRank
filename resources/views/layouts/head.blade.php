@@ -8,4 +8,5 @@
 <meta content="Analyze Rating to your product & organization" name="description" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <link rel="icon" href="{{ asset('assets/images/OrRank_white.svg') }}" sizes="any" type="image/svg+xml">
+
 @livewireStyles
