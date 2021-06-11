@@ -3,12 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Queue;
-use App\Models\User;
 use Illuminate\Http\Request;
+use App\Models\User;
 use Auth;
 class QueueController extends Controller
 {
-
     public function index()
     {
         return  view('queue.create');
@@ -80,8 +79,6 @@ class QueueController extends Controller
             return redirect('/'.Auth::user()->username.'/'.$unq);
         } 
     }
-
-
 
     /**
      * Show the form for editing the specified resource.
