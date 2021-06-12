@@ -57,15 +57,16 @@
                                         <button type="button" class="btn waves-effect waves-light btn-primary">Open
                                             Window</button>
                                     </span>
-                                    <input type="text" id="copyinput" disabled class="form-control"
+                                    <input type="text" disabled class="form-control"
                                         value="{{ url('/~/' . $queue->identifier) }}">
                                     <span class="input-group-append">
-                                        <button onclick="copyData()" type="button"
-                                            class="btn waves-effect waves-light btn-primary" data-placement="bottom"
-                                            data-toggle="tooltip" class="tooltips" data-original-title="Copy URL"><i
-                                                class="fas fa-clipboard"></i></button>
+                                        <button onclick="copyToClipboard('{{ url("/~/" . $queue->identifier) }}')"
+                                            type="button" class="btn waves-effect waves-light btn-primary"
+                                            data-placement="bottom" data-toggle="tooltip" class="tooltips"
+                                            data-original-title="Copy URL"><i class="fas fa-clipboard"></i></button>
                                     </span>
                                 </div>
+
                             </div>
                             <div class="col-xl-4 col-md-6">
                                 @livewire('components.qr-code', ['uniqueid' => $queue->identifier])
