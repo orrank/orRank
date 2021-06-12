@@ -54,13 +54,14 @@
                             <div class="col-xl-8 col-md-6">
                                 <div class="input-group mt-3">
                                     <span class="input-group-prepend">
-                                        <button type="button" class="btn waves-effect waves-light btn-primary">Open
+                                        <button type="button" class="btn waves-effect waves-light btn-primary"
+                                            onclick="window.open('{{ url('/~/' . $queue->identifier) }}', '_blank', 'location=yes,height=770,width=1320,scrollbars=yes,status=yes');">Open
                                             Window</button>
                                     </span>
                                     <input type="text" disabled class="form-control"
                                         value="{{ url('/~/' . $queue->identifier) }}">
                                     <span class="input-group-append">
-                                        <button onclick="copyToClipboard('{{ url("/~/" . $queue->identifier) }}')"
+                                        <button onclick="copyToClipboard('{{ url('/~/' . $queue->identifier) }}')"
                                             type="button" class="btn waves-effect waves-light btn-primary"
                                             data-placement="bottom" data-toggle="tooltip" class="tooltips"
                                             data-original-title="Copy URL"><i class="fas fa-clipboard"></i></button>
