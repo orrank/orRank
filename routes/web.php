@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\QueueController;
+use App\Http\Controllers\DeviceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,8 @@ Route::group(['middleware' => 'auth'], function(){
 
     Route::post('/user:profile:image:upload', [UserController::class, 'imageUpdate']);
 
+    Route::get('/user:image:remove', [UserController::class, 'imageRemove']);
+
     Route::get('/organization/new', [OrganizationController::class, 'index']);
 
     Route::get('/queue/new', [QueueController::class, 'index']);
@@ -39,9 +42,9 @@ Route::group(['middleware' => 'auth'], function(){
     Route::post('/queue/create', [QueueController::class, 'store']);
 });
 
-Route::get('/user:image:remove', [UserController::class, 'imageRemove']);
-
 Route::get('/{username}', [UserController::class, 'index']);
+
+Route::get('/~/{queue}', [DeviceController::class, 'index']);
 
 Route::group(['prefix' => '{username}', 'middleware' => ['auth']], function ($username) {
 
