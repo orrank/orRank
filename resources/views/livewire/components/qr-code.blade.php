@@ -12,7 +12,7 @@
             height: 256,
             colorDark: "#000000",
             colorLight: "#ffffff",
-            logo: "{{ asset('assets/images/Ratinq.svg') }}",
+            logo: "{{ asset('assets/images/OrRank.svg') }}",
             logoWidth: 50,
             logoHeight: 50,
         };

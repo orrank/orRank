@@ -57,7 +57,11 @@
                                 <a class="dropdown-item" href="blog-single.html">Blog Details</a>
                             </div>
                         </li>
+                        @if(Auth::user())
+                        <li><a href="/{{Auth::user()->username}}/dashboard">~{{Auth::user()->username}}</a></li>
+                        @else 
                         <li><a href="/login">Login</a></li>
+                        @endif
 
                         <li>
                             <button class="search">

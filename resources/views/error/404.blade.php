@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" href="{{ asset('assets/images/OrRank_white.svg') }}" sizes="any" type="image/svg+xml">
-    <title>404</title>
+    <title>• 404 • OrRank •</title>
     <style>
         * {
             transition: all 0.6s;
@@ -63,7 +63,8 @@
             <br><br>
             <h1>404</h1>
             <h2>This is not the webpage you are looking for.</h2>
-            <a href="/">Return Home</a>
+            <br><br>
+            <a style="text-decoration: none;" href="/"><h4>Return Home</h4></a>
         </div>
     </div>
 </body>
