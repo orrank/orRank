@@ -20,6 +20,9 @@
     <link href="{{ asset('assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/libs/toastr/toastr.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/libs/tooltipster/tooltipster.bundle.min.css') }}" rel="stylesheet" type="text/css">
+
+    <!-- Vendor js -->
+    <script src="{{ asset('assets/js/vendor.min.js') }}"></script>
 </head>
 
 <body>
@@ -68,12 +71,14 @@
     <!-- Right bar overlay-->
     <div class="rightbar-overlay"></div>
 
-    <!-- Vendor js -->
-    <script src="{{ asset('assets/js/vendor.min.js') }}"></script>
+
     <!-- App js -->
     <script src="{{ asset('assets/js/app.min.js') }}"></script>
 
     <script src="{{ asset('assets/libs/toastr/toastr.min.js') }}"></script>
+
+    <!-- rating js -->
+    <script src="{{ asset('assets/libs/ratings/jquery.raty-fa.js') }}"></script>
 
     <script src="{{ asset('assets/libs/tooltipster/tooltipster.bundle.min.js') }}"></script>
     @foreach (['error', 'success', 'info', 'warning'] as $msg)

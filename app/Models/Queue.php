@@ -19,6 +19,12 @@ class Queue extends Model
         'user_id',
         'organization_id'
     ];
+
+    public function rating()
+    {
+        return $this->hasMany(Rating::class);
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);

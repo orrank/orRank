@@ -21,8 +21,11 @@ class UserController extends Controller
     {
         $user = User::where('username', $username)->first(); 
         $count = User::where('username', $username)->count();
+
         if($count == 1)
-            return view('user.profile',['user'=>$user, 'users' => User::where('id', '!=', Auth::id())->get(), 'followers' => Follow::where('target_id', $user->id)->count(),
+            return view('user.profile',['user'=>$user, 'users' => User::where('id', '!=', Auth::id())->get(),
+            'queues' => Queue::where('user_id', $user->id)->orderBy('id', 'desc')->take(3)->get(),
+            'followers' => Follow::where('target_id', $user->id)->count(),
             'following' => Follow::where('user_id', $user->id)->count()]);
         else
             return view('error.404');

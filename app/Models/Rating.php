@@ -15,4 +15,9 @@ class Rating extends Model
         'rate',
         'feedback'
     ];
+
+    public function queue()
+    {
+        return $this->belongsTo(Queue::class);
+    }
 }
