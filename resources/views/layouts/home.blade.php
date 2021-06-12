@@ -8,15 +8,15 @@
         rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Merienda&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="assets/home/css/linearicons.css" />
-    <link rel="stylesheet" href="assets/home/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="assets/home/css/bootstrap.css" />
-    <link rel="stylesheet" href="assets/home/css/magnific-popup.css" />
-    <link rel="stylesheet" href="assets/home/css/owl.carousel.css" />
-    <link rel="stylesheet" href="assets/home/css/nice-select.css">
-    <link rel="stylesheet" href="assets/home/css/hexagons.min.css" />
+    <link rel="stylesheet" href="{{ asset('assets/home/css/linearicons.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/home/css/font-awesome.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/home/css/bootstrap.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/home/css/magnific-popup.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/home/css/owl.carousel.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/home/css/nice-select.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/home/css/hexagons.min.css') }}" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/themify-icons/0.1.2/css/themify-icons.css" />
-    <link rel="stylesheet" href="assets/home/css/main.css" />
+    <link rel="stylesheet" href="{{ asset('assets/home/css/main.css') }}" />
 </head>
 
 <body>
@@ -160,22 +160,22 @@
     </footer>
     <!-- ================ End footer Area ================= -->
 
-    <script src="assets/home/js/vendor/jquery-2.2.4.min.js"></script>
+    <script src="{{ asset('assets/home/js/vendor/jquery-2.2.4.min.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js">
     </script>
-    <script src="assets/home/js/vendor/bootstrap.min.js"></script>
+    <script src="{{ asset('assets/home/js/vendor/bootstrap.min.js') }}"></script>
     <script type="text/javascript"
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
-    <script src="assets/home/js/jquery.ajaxchimp.min.js"></script>
-    <script src="assets/home/js/jquery.magnific-popup.min.js"></script>
-    <script src="assets/home/js/parallax.min.js"></script>
-    <script src="assets/home/js/owl.carousel.min.js"></script>
-    <script src="assets/home/js/jquery.sticky.js"></script>
-    <script src="assets/home/js/hexagons.min.js"></script>
-    <script src="assets/home/js/jquery.counterup.min.js"></script>
-    <script src="assets/home/js/waypoints.min.js"></script>
-    <script src="assets/home/js/jquery.nice-select.min.js"></script>
-    <script src="assets/home/js/main.js"></script>
+    <script src="{{ asset('assets/home/js/jquery.ajaxchimp.min.js') }}"></script>
+    <script src="{{ asset('assets/home/js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('assets/home/js/parallax.min.js') }}"></script>
+    <script src="{{ asset('assets/home/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('assets/home/js/jquery.sticky.js') }}"></script>
+    <script src="{{ asset('assets/home/js/hexagons.min.js') }}"></script>
+    <script src="{{ asset('assets/home/js/jquery.counterup.min.js') }}"></script>
+    <script src="{{ asset('assets/home/js/waypoints.min.js') }}"></script>
+    <script src="{{ asset('assets/home/js/jquery.nice-select.min.js') }}"></script>
+    <script src="{{ asset('assets/home/js/main.js') }}"></script>
 </body>
 
 </html>

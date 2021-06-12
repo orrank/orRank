@@ -16,7 +16,7 @@
                     </p>
                 </div>
                 <div class="offset-lg-2 col-lg-5 col-md-12 home-banner-right">
-                    <img class="img-fluid" src="img/header-img.png" alt="" />
+                    <img class="img-fluid" src="assets/home/img/header-img.png" alt="" />
                 </div>
             </div>
         </div>

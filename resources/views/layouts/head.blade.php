@@ -1,6 +1,6 @@
 <meta charset="utf-8" />
 <title>
-    @if (Auth::user()) {{ Auth::user()->username }} @endif •
+    @if (Auth::user()) • {{ Auth::user()->username }} @endif •
     OrRank •
 </title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
