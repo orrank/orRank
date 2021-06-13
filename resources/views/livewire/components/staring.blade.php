@@ -39,6 +39,12 @@
 
     </style>
     <div class="star">
-        <span class="{{$clz1}}" wire:click="addStar(1)">★</span><span class="{{$clz2}}" wire:click="addStar(2)">★</span><span class="{{$clz3}}" wire:click="addStar(3)">★</span><span class="{{$clz4}}" wire:click="addStar(4)">★</span><span class="{{$clz5}}" wire:click="addStar(5)">★</span>
+        <span class="{{ $clz1 }}" wire:click="addStar(1)">★</span><span class="{{ $clz2 }}"
+            wire:click="addStar(2)">★</span><span class="{{ $clz3 }}" wire:click="addStar(3)">★</span><span
+            class="{{ $clz4 }}" wire:click="addStar(4)">★</span><span class="{{ $clz5 }}"
+            wire:click="addStar(5)">★</span>
+
+        <br>
+        <p class="mb-0 float-right" style="font-size: 12px;">{{ $totalrating }} Rating</p>
     </div>
 </div>

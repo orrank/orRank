@@ -8,7 +8,7 @@ use App\Models\Rating;
 
 class Staring extends Component
 {
-    public $queueId, $clz1, $clz2, $clz3, $clz4, $clz5;
+    public $queueId, $totalrating, $clz1, $clz2, $clz3, $clz4, $clz5;
 
     public function addStar($score)
     {
@@ -26,7 +26,9 @@ class Staring extends Component
             $data->feedback = '';
             $data->save();    
         }
-        
+
+        $this->totalrating = Rating::where('queue_id', $this->queueId)->count();
+
         if($score == 1)
         {
             $this->clz1 = 'yellow';
@@ -72,6 +74,8 @@ class Staring extends Component
     public function mount()
     {
         $starred = Rating::where([['user_id', '=', Auth::user()->id], ['queue_id', '=', $this->queueId]])->first();
+        $this->totalrating = Rating::where('queue_id', $this->queueId)->count();
+
         if($starred)
         {
             if($starred->rate == 1)
