@@ -71,7 +71,8 @@
                                 <div class="card widget-box-one border border-success bg-soft-success">
                                     <div class="card-body">
                                         <strong>Link Your Device</strong>
-                                        <p>Open your device camera to scan this QRCode it will open a browser. Turn on full screen mode and increase your backlight setting.</p>
+                                        <p>Open your device camera to scan this QRCode it will open a browser. Turn on full
+                                            screen mode and increase your backlight setting.</p>
                                         <strong class="text-warning">We'll release ios and android apps soon.</strong>
                                     </div>
                                 </div>
@@ -106,13 +107,74 @@
                                 <strong>Transfer ownership</strong>
                                 <p>Transfer this queue to another user or to an organization where you have the ability to
                                     create repositories.</p>
-                                <button class="btn btn-danger">Transfer</button>
-
+                                <button data-toggle="modal" data-target="#TransferModal"
+                                    class="btn btn-danger btn-sm float-right">Transfer</button>
+                                <br>
                                 <hr>
                                 <strong>Delete this Queue</strong>
                                 <p>Once you delete a queue, there is no going back. Please be certain.</p>
-                                <button class="btn btn-danger">Delete this queue</button>
+                                <br>
+                                <button data-toggle="modal"  data-target="#DeleteModal" class="btn btn-danger btn-sm float-right">Delete this queue</button>
                             </div>
+                        </div>
+
+                        <div id="TransferModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"
+                            style="display: none;">
+                            <div class="modal-dialog">
+                                <div class="modal-content p-0 b-0">
+                                    <div class="card mb-0">
+                                        <div class="card-header bg-secondary">
+                                            <h5 class="modal-title font-18 text-white float-left mt-0">Transfer ownership
+                                            </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="card-body">
+                                            <form action="{{ url('/user:queue:transfer') }}" method="post"
+                                                enctype="multipart/form-data">
+                                                @csrf
+
+                                                <button style="submit"
+                                                    class="btn btn-sm btn-danger float-right ml-3">Transfer</button>
+                                                <button style="button" data-dismiss="modal"
+                                                    class="btn btn-sm btn-dark float-right ml-3">Cancel</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.modal-content -->
+                            </div>
+                            <!-- /.modal-dialog -->
+                        </div>
+                        <div id="DeleteModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"
+                            style="display: none;">
+                            <div class="modal-dialog">
+                                <div class="modal-content p-0 b-0">
+                                    <div class="card mb-0">
+                                        <div class="card-header bg-secondary">
+                                            <h5 class="modal-title font-18 text-white float-left mt-0">Delete Queue
+                                            </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="card-body">
+                                            <form action="{{ url('/user:queue:transfer') }}" method="post"
+                                                enctype="multipart/form-data">
+                                                @csrf
+
+                                                <button style="submit"
+                                                    class="btn btn-sm btn-danger float-right ml-3">Delete</button>
+                                                <button style="button" data-dismiss="modal"
+                                                    class="btn btn-sm btn-dark float-right ml-3">Cancel</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.modal-content -->
+                            </div>
+                            <!-- /.modal-dialog -->
                         </div>
                     </div>
                 </div>

@@ -76,7 +76,7 @@
                                     @endif
                                     @if (Auth::user() && Auth::user()->id == $user->id)
                                         <a href="/{{ Auth::user()->username }}/profile:edit"
-                                            class="btn btn-dark btn-sm width-sm waves-effect mt-2 waves-light">Edit
+                                            class="btn btn-dark width-sm  btn-xs waves-effect mt-2 waves-light">Edit
                                             Profile</a>
                                     @else
                                         @if (Auth::user())
@@ -101,35 +101,33 @@
                                     </p>
                                     <hr />
                                     <div class="text-left">
-                                        @if (Auth::user())
-                                            @if (Auth::user()->mobile)
+                                            @if ($user->mobile)
                                                 <p class="text-muted font-13">
                                                     <strong>
                                                         <i class="mdi mdi-cellphone-iphone"></i>
                                                     </strong>
                                                     <span class="ml-4">
-                                                        {{ Auth::user()->mobile }}</span>
+                                                        {{ $user->mobile }}</span>
                                                 </p>
                                             @endif
-                                            @if (Auth::user()->email)
+                                            @if ($user->email)
                                                 <p class="text-muted font-13">
                                                     <strong>
                                                         <i class="mdi mdi-email-outline"></i>
                                                     </strong>
                                                     <span class="ml-4">
-                                                        {{ Auth::user()->email }}</span>
+                                                        {{ $user->email }}</span>
                                                 </p>
                                             @endif
-                                            @if (Auth::user()->location)
+                                            @if ($user->location)
                                                 <p class="text-muted font-13">
                                                     <strong>
                                                         <i class="mdi mdi-map-marker-outline"></i>
                                                     </strong>
                                                     <span class="ml-4">
-                                                        {{ Auth::user()->location }}</span>
+                                                        {{ $user->location }}</span>
                                                 </p>
                                             @endif
-                                        @endif
                                     </div>
 
                                     <ul class="social-links list-inline mt-4">

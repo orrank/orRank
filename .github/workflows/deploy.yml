@@ -13,17 +13,17 @@ jobs:
       - name: 🐛 Validate composer.json and composer.lock
         run: composer validate --strict
 
-      #- name: 🔨 Install Composer dependencies
-      #  run: composer install
+      - name: 🔨 Install Composer dependencies
+        run: composer install
 
       #- name: 🔨 Install NPM dependencies Setup Laravel move directory
       #  run: npm install && npm run dev
 
-      - name: 🔨 Remove bootstrp
-        run: rm -rf bootstrap
+      - name: 🔨 Laravel configuration Cache clear
+        run: php artisan config:cache
 
-      - name: 🔨 Remove public
-        run: rm -rf public
+      #- name: 🔨 Remove public
+      #  run: rm -rf public
 
       - name: 🚀 Deploy 📂 Sync files 🎉
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
