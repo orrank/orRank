@@ -18,7 +18,7 @@ class CreateRatingsTable extends Migration
             $table->integer('queue_id');
             $table->integer('user_id');
             $table->integer('rate');
-            $table->text('feedback');
+            $table->text('feedback')->nullable();
             $table->timestamps();
         });
     }

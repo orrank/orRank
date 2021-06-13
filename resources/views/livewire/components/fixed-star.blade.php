@@ -14,21 +14,6 @@
             line-height: 1;
         }
 
-        span {
-            cursor: pointer;
-        }
-
-        .star {
-            display: inline-block;
-            font-size: 30px;
-            font-family: Times;
-            line-height: 1;
-        }
-
-        .yellow {
-            color: #fc0;
-        }
-
         .Stars::before {
             content: "★★★★★";
             letter-spacing: 3px;
@@ -38,7 +23,5 @@
         }
 
     </style>
-    <div class="star">
-        <span class="{{$clz1}}" wire:click="addStar(1)">★</span><span class="{{$clz2}}" wire:click="addStar(2)">★</span><span class="{{$clz3}}" wire:click="addStar(3)">★</span><span class="{{$clz4}}" wire:click="addStar(4)">★</span><span class="{{$clz5}}" wire:click="addStar(5)">★</span>
-    </div>
+    <div class="Stars" style="--rating: 3;" aria-label="Rating of this product is 4 out of 5."> </div>
 </div>

@@ -164,7 +164,7 @@
                                         <div class=" pt-2">
                                             <h5 class="font-16 mb-1">{{ $queue->name }}</h5>
                                             <div class="float-right">
-                                                @livewire('components.staring')
+                                                @livewire('components.staring', ['queueId'=> $queue->id])
                                             </div>
                                             <p class="mb-0">{{ $queue->description }}</p>
                                             {{-- <p><b>{{ $queue->user->email }}</b></p> --}}
