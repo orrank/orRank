@@ -158,25 +158,31 @@
                         <div class="col-xl-9 col-md-8">
                             <div class="row">
                                 <div class="col-xl-8">
-                                    <h5 class="header-title">Recent Activities</h5>
+                                    <h5 class="header-title">Recent Rating Queues</h5>
 
-                                    <div class=" pt-2">
-                                        <h5 class="font-16 mb-1">Lead designer / Developer</h5>
-                                        <p class="mb-0">websitename.com</p>
-                                        <p><b>2010-2015</b></p>
+                                    @forelse($queues as $queue)
+                                        <div class=" pt-2">
+                                            <h5 class="font-16 mb-1">{{ $queue->name }}</h5>
+                                            <div class="float-right">
+                                                @livewire('components.staring', ['queueId'=> $queue->id])
+                                            </div>
+                                            <p class="mb-0">{{ $queue->description }}</p>
+                                            {{-- <p><b>{{ $queue->user->email }}</b></p> --}}
 
-                                        <p class="sub-header"></p>
-                                    </div>
+                                            <p class="sub-header"></p>
+                                        </div>
 
-                                    <hr />
+                                        <hr />
+                                    @empty
+                                        <div class="card widget-box-three">
+                                            <div class="card-body">
+                                                <center>
+                                                    <h6>~{{ $user->username }} doesn’t have any Queues. </h6>
+                                                </center>
+                                            </div>
+                                        </div>
+                                    @endforelse
 
-                                    <div class="">
-                                        <h5 class="font-16 mb-1">Senior Graphic Designer</h5>
-                                        <p class="mb-0">coderthemes.com</p>
-                                        <p><b>2007-2009</b></p>
-
-                                        <p class="sub-header"></p>
-                                    </div>
                                 </div>
                                 <!-- end col -->
 

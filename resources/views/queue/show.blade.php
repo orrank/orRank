@@ -54,18 +54,28 @@
                             <div class="col-xl-8 col-md-6">
                                 <div class="input-group mt-3">
                                     <span class="input-group-prepend">
-                                        <button type="button" class="btn waves-effect waves-light btn-primary">Open
+                                        <button type="button" class="btn waves-effect waves-light btn-dark"
+                                            onclick="window.open('{{ url('/~/' . $queue->identifier) }}', '_blank', 'location=yes,height=770,width=1320,scrollbars=yes,status=yes');">Open
                                             Window</button>
                                     </span>
-                                    <input type="text" id="copyinput" disabled class="form-control"
+                                    <input type="text" disabled class="form-control"
                                         value="{{ url('/~/' . $queue->identifier) }}">
                                     <span class="input-group-append">
-                                        <button onclick="copyData()" type="button"
-                                            class="btn waves-effect waves-light btn-primary" data-placement="bottom"
-                                            data-toggle="tooltip" class="tooltips" data-original-title="Copy URL"><i
-                                                class="fas fa-clipboard"></i></button>
+                                        <button onclick="copyToClipboard('{{ url('/~/' . $queue->identifier) }}')"
+                                            type="button" class="btn waves-effect waves-light btn-dark"
+                                            data-placement="bottom" data-toggle="tooltip" class="tooltips"
+                                            data-original-title="Copy URL"><i class="fas fa-clipboard"></i></button>
                                     </span>
                                 </div>
+                                <br>
+                                <div class="card widget-box-one border border-success bg-soft-success">
+                                    <div class="card-body">
+                                        <strong>Link Your Device</strong>
+                                        <p>Open your device camera to scan this QRCode it will open a browser. Turn on full screen mode and increase your backlight setting.</p>
+                                        <strong class="text-warning">We'll release ios and android apps soon.</strong>
+                                    </div>
+                                </div>
+
                             </div>
                             <div class="col-xl-4 col-md-6">
                                 @livewire('components.qr-code', ['uniqueid' => $queue->identifier])
