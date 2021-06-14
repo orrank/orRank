@@ -45,9 +45,14 @@
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane  show active" id="home-b1" role="tabpanel" aria-labelledby="home-b1-tab">
-                        <span class="sub-title text-muted">{{ $queue->description }}</span>
-
-
+                        <div class="row">
+                            <div class="col-xl-7 col-md-6">
+                                <span class="sub-title text-muted">{{ $queue->description }}</span>
+                            </div>
+                            <div class="col-xl-5 col-md-6">
+                                @livewire('components.doughnut-chart', ['queue' =>$queue->id])
+                            </div>
+                        </div>
                     </div>
                     <div class="tab-pane" id="profile-b1" role="tabpanel" aria-labelledby="profile-b1-tab">
                         <div class="row">
@@ -114,7 +119,8 @@
                                 <strong>Delete this Queue</strong>
                                 <p>Once you delete a queue, there is no going back. Please be certain.</p>
                                 <br>
-                                <button data-toggle="modal"  data-target="#DeleteModal" class="btn btn-danger btn-sm float-right">Delete this queue</button>
+                                <button data-toggle="modal" data-target="#DeleteModal"
+                                    class="btn btn-danger btn-sm float-right">Delete this queue</button>
                             </div>
                         </div>
 

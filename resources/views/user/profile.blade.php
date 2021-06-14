@@ -101,33 +101,33 @@
                                     </p>
                                     <hr />
                                     <div class="text-left">
-                                            @if ($user->mobile)
-                                                <p class="text-muted font-13">
-                                                    <strong>
-                                                        <i class="mdi mdi-cellphone-iphone"></i>
-                                                    </strong>
-                                                    <span class="ml-4">
-                                                        {{ $user->mobile }}</span>
-                                                </p>
-                                            @endif
-                                            @if ($user->email)
-                                                <p class="text-muted font-13">
-                                                    <strong>
-                                                        <i class="mdi mdi-email-outline"></i>
-                                                    </strong>
-                                                    <span class="ml-4">
-                                                        {{ $user->email }}</span>
-                                                </p>
-                                            @endif
-                                            @if ($user->location)
-                                                <p class="text-muted font-13">
-                                                    <strong>
-                                                        <i class="mdi mdi-map-marker-outline"></i>
-                                                    </strong>
-                                                    <span class="ml-4">
-                                                        {{ $user->location }}</span>
-                                                </p>
-                                            @endif
+                                        @if ($user->mobile)
+                                            <p class="text-muted font-13">
+                                                <strong>
+                                                    <i class="mdi mdi-cellphone-iphone"></i>
+                                                </strong>
+                                                <span class="ml-4">
+                                                    {{ $user->mobile }}</span>
+                                            </p>
+                                        @endif
+                                        @if ($user->email)
+                                            <p class="text-muted font-13">
+                                                <strong>
+                                                    <i class="mdi mdi-email-outline"></i>
+                                                </strong>
+                                                <span class="ml-4">
+                                                    {{ $user->email }}</span>
+                                            </p>
+                                        @endif
+                                        @if ($user->location)
+                                            <p class="text-muted font-13">
+                                                <strong>
+                                                    <i class="mdi mdi-map-marker-outline"></i>
+                                                </strong>
+                                                <span class="ml-4">
+                                                    {{ $user->location }}</span>
+                                            </p>
+                                        @endif
                                     </div>
 
                                     <ul class="social-links list-inline mt-4">
@@ -162,7 +162,9 @@
                                         <div class=" pt-2">
                                             <h5 class="font-16 mb-1">{{ $queue->name }}</h5>
                                             <div class="float-right">
-                                                @livewire('components.staring', ['queueId'=> $queue->id])
+                                                @if (Auth::user())
+                                                    @livewire('components.staring', ['queueId'=> $queue->id])
+                                                @endif
                                             </div>
                                             <p class="mb-0">{{ $queue->description }}</p>
                                             {{-- <p><b>{{ $queue->user->email }}</b></p> --}}
@@ -207,8 +209,10 @@
                                                         <p class="inbox-item-text">~{{ $user->username }}</p>
                                                     </a>
                                                     <p class="inbox-item-date">
+                                                        @if (Auth::user())
                                                         @livewire('components.follow-button', ['frdId' => $user->id],
                                                         key($user->id))
+                                                        @endif
                                                     </p>
                                                 </div>
                                             </div>
