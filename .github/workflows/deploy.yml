@@ -13,6 +13,15 @@ jobs:
       - name: 🐛 Validate composer.json and composer.lock
         run: composer validate --strict
 
+      - name: 📝 Copy .env
+        run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+
+      - name: 📜 Generate key
+        run: php artisan key:generate
+
+      - name: 🔒 Directory Permissions
+        run: chmod -R 777 storage bootstrap/cache
+
       - name: 🔨 Setup PHP
         uses: shivammathur/setup-php@v2
         with:
