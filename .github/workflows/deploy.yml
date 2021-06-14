@@ -16,12 +16,6 @@ jobs:
       - name: 📝 Copy .env
         run: php -r "file_exists('.env') || copy('.env.example', '.env');"
 
-      - name: 📜 Generate key
-        run: php artisan key:generate
-
-      - name: 🔒 Directory Permissions
-        run: chmod -R 777 storage bootstrap/cache
-
       - name: 🔨 Setup PHP
         uses: shivammathur/setup-php@v2
         with:
@@ -31,14 +25,20 @@ jobs:
 
       - name: 🔨 Install Composer dependencies
         run: composer install --prefer-dist --no-interaction --no-suggest
+        
+      - name: 📜 Generate key
+        run: php artisan key:generate
 
+      - name: 🔒 Directory Permissions
+        run: chmod -R 777 storage bootstrap/cache
+        
+      - name: 🔨 Laravel configuration Cache clear
+        run: php artisan config:cache
+        
       - name: 🚀 Execute tests
         run: vendor/bin/phpunit --verbose
       #- name: 🔨 Install NPM dependencies Setup Laravel move directory
       #  run: npm install && npm run dev
-
-      - name: 🔨 Laravel configuration Cache clear
-        run: php artisan config:cache
 
       #- name: 🔨 Remove public
       #  run: rm -rf public
