@@ -13,9 +13,18 @@ jobs:
       - name: 🐛 Validate composer.json and composer.lock
         run: composer validate --strict
 
-      - name: 🔨 Install Composer dependencies
-        run: composer install
+      - name: 🔨 Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 7.3
+          extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite
+          coverage: none
 
+      - name: 🔨 Install Composer dependencies
+        run: composer install --prefer-dist --no-interaction --no-suggest
+
+      - name: 🚀 Execute tests
+        run: vendor/bin/phpunit --verbose
       #- name: 🔨 Install NPM dependencies Setup Laravel move directory
       #  run: npm install && npm run dev
 
