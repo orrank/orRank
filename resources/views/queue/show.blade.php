@@ -25,7 +25,7 @@
                         <a class="nav-link active" id="home-b1-tab" data-toggle="tab" href="#home-b1" role="tab"
                             aria-controls="home-b1" aria-selected="false">
                             <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
-                            <span class="d-none d-sm-block">Summary</span>
+                            <span class="d-none d-sm-block">General</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -48,6 +48,14 @@
                         <div class="row">
                             <div class="col-xl-7 col-md-6">
                                 <span class="sub-title text-muted">{{ $queue->description }}</span>
+
+                                <hr>
+                                Rating Queue Type : <strong>{{ $queue->type }}</strong>
+                                <hr>
+                                Rating Interval : <strong>
+                                @if ($queue->interval) {{ $queue->interval }} @else 0
+                                    @endif
+                                </strong>
                             </div>
                             <div class="col-xl-5 col-md-6">
                                 @livewire('components.doughnut-chart', ['queue' =>$queue->id])

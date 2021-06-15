@@ -43,20 +43,20 @@
                                 </label>
                                 <br>
                                 <div class="form-check  form-check-inline">
-                                    <input class="form-check-input" type="radio" name="Radios" id="Radios1" value="start"
+                                    <input class="form-check-input" type="radio" name="Radios" id="Radios1" value="Star"
                                         checked>
                                     <label class="form-check-label" for="Radios1">
                                         Star Rating
                                     </label>
                                 </div>
                                 <div class="form-check  form-check-inline">
-                                    <input class="form-check-input" type="radio" name="Radios" id="Radios2" value="emoji">
+                                    <input class="form-check-input" type="radio" name="Radios" id="Radios2" value="Emoji">
                                     <label class="form-check-label" for="Radios2">
                                         Emoji Rating
                                     </label>
                                 </div>
                                 <div class="form-check  form-check-inline">
-                                    <input class="form-check-input" type="radio" name="Radios" id="Radios3" value="ranger">
+                                    <input class="form-check-input" type="radio" name="Radios" id="Radios3" value="Ranger">
                                     <label class="form-check-label" for="Radios3">
                                         Range Rating
                                     </label>
@@ -64,8 +64,7 @@
                             </div>
                             <p class="sub-header">
                                 By creating an <strong>Queue</strong>, you agree to the Terms of Service. For more
-                                information
-                                about RatingLand privacy practices, see the RatingLand Privacy Statement.
+                                information about OrRank privacy practices, see the OrRank Privacy Statement.
                             </p>
 
                             <button type="submit" class="btn btn-dark waves-effect waves-light">Submit</button>
