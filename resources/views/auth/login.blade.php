@@ -16,14 +16,15 @@
                             @csrf
                             <div class="form-group">
                                 <label for="email">E-mail</label>
-                                <input class="form-control" id="email" type="email" name="email" :value="old('email')"
-                                    required autofocus>
+                                <input class="form-control  @if ($errors->any()) parsley-error @endif" id="email" type="email" name="email"
+                                :value="old('email')" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="password">Password</label>
-                                <input class="form-control" id="password" type="password" name="password" required
-                                    autocomplete="current-password">
+                                <input class="form-control  @if ($errors->any()) parsley-error @endif" id="password" type="password" name="password"
+                                required
+                                autocomplete="current-password">
                             </div>
 
                             <div class="form-group">
@@ -32,6 +33,12 @@
                                     <label class="custom-control-label" for="remember_me">Remember me</label>
                                 </div>
                             </div>
+
+                            @if ($errors->any())
+                                @foreach ($errors->all() as $error)
+                                    <small class="text-danger" style="margin-top: 0px;">{{ $error }}</small>
+                                @endforeach
+                            @endif
 
                             <div class="form-group text-center mt-4 pt-2">
                                 <div class="col-sm-12">
