@@ -25,7 +25,7 @@
                         <a class="nav-link active" id="home-b1-tab" data-toggle="tab" href="#home-b1" role="tab"
                             aria-controls="home-b1" aria-selected="false">
                             <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
-                            <span class="d-none d-sm-block">Summary</span>
+                            <span class="d-none d-sm-block">General</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -45,9 +45,22 @@
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane  show active" id="home-b1" role="tabpanel" aria-labelledby="home-b1-tab">
-                        <span class="sub-title text-muted">{{ $queue->description }}</span>
+                        <div class="row">
+                            <div class="col-xl-7 col-md-6">
+                                <span class="sub-title text-muted">{{ $queue->description }}</span>
 
-
+                                <hr>
+                                Rating Queue Type : <strong>{{ $queue->type }}</strong>
+                                <hr>
+                                Rating Interval : <strong>
+                                @if ($queue->interval) {{ $queue->interval }} @else 0
+                                    @endif
+                                </strong>
+                            </div>
+                            <div class="col-xl-5 col-md-6">
+                                @livewire('components.doughnut-chart', ['queue' =>$queue->id])
+                            </div>
+                        </div>
                     </div>
                     <div class="tab-pane" id="profile-b1" role="tabpanel" aria-labelledby="profile-b1-tab">
                         <div class="row">
@@ -114,7 +127,8 @@
                                 <strong>Delete this Queue</strong>
                                 <p>Once you delete a queue, there is no going back. Please be certain.</p>
                                 <br>
-                                <button data-toggle="modal"  data-target="#DeleteModal" class="btn btn-danger btn-sm float-right">Delete this queue</button>
+                                <button data-toggle="modal" data-target="#DeleteModal"
+                                    class="btn btn-danger btn-sm float-right">Delete this queue</button>
                             </div>
                         </div>
 

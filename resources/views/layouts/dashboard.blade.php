@@ -14,8 +14,8 @@
             <link href="{{ asset('assets/css/app-dark.min.css') }}" rel="stylesheet" type="text/css" />
         @endif
     @else
-        <link href="{{ asset('assets/css/bootstrap-dark.min.css') }}" rel="stylesheet" type="text/css" />
-        <link href="{{ asset('assets/css/app-dark.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('assets/css/app.min.css') }}" rel="stylesheet" type="text/css" />
     @endif
     <link href="{{ asset('assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/libs/toastr/toastr.min.css') }}" rel="stylesheet" type="text/css" />
@@ -77,10 +77,8 @@
 
     <script src="{{ asset('assets/libs/toastr/toastr.min.js') }}"></script>
 
-    <!-- rating js -->
-    <script src="{{ asset('assets/libs/ratings/jquery.raty-fa.js') }}"></script>
-
     <script src="{{ asset('assets/libs/tooltipster/tooltipster.bundle.min.js') }}"></script>
+
     @foreach (['error', 'success', 'info', 'warning'] as $msg)
         @if (Session::has($msg))
             <script type="text/javascript">
@@ -105,7 +103,7 @@
             </script>
         @endif
     @endforeach
-
+    
     @livewireScripts
 
 </body>

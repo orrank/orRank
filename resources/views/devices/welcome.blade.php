@@ -10,10 +10,15 @@
     <link href="{{ asset('assets/css/app.min.css') }}" rel="stylesheet" type="text/css" />
     <style>
         .ico-48px {
-            font-size: 148px;
+            
         }
         body{
             background-color: white;
+        }
+        #score{
+            font-size: 180px;
+            text-align: center;
+            color: yellow;
         }
     </style>
 </head>
@@ -24,21 +29,12 @@
             <div class="col-md-12 col-lg-12 col-xl-12">
                     <div class="text-center">
                         <div class="mt-5 mb-5">
-                            <div id="score"></div>
+                            <div id="score">★★★★★</div>
                         </div>
                     </div>
             </div>
         </div>
     </div>
-
-    <script src="{{ asset('assets/js/vendor.min.js') }}"></script>
-
-    <!-- rating js -->
-    <script src="{{ asset('assets/libs/ratings/jquery.raty-fa.js') }}"></script>
-
-    <!-- Init js -->
-    <script src="{{ asset('assets/js/pages/rating.init.js') }}"></script>
-
 </body>
 
 </html>
