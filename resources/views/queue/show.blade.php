@@ -149,6 +149,8 @@
                                                 enctype="multipart/form-data">
                                                 @csrf
 
+                                                @livewire('components.find-username')
+
                                                 <button style="submit"
                                                     class="btn btn-sm btn-danger float-right ml-3">Transfer</button>
                                                 <button style="button" data-dismiss="modal"
