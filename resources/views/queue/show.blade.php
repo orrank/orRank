@@ -145,8 +145,7 @@
                                             </button>
                                         </div>
                                         <div class="card-body">
-                                            <form action="{{ url('/user:queue:transfer') }}" method="post"
-                                                enctype="multipart/form-data">
+                                            <form action="/queue/transfer/{{ $queue->id }}" method="post">
                                                 @csrf
 
                                                 @livewire('components.find-username')

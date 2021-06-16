@@ -80,15 +80,37 @@ class QueueController extends Controller
         } 
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Queue  $queue
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Queue $queue)
+    public function transfer(Request $request, $queId)
     {
-        //
+        $usrcount = User::where('username', $request->username)->count();
+        
+        if ($usrcount == 1) {
+            if ($request->username == Auth::user()->username) 
+            {
+                $request->session()->flash('warning', 'You can\'t share your queue to your username');
+                return redirect()->back();
+            }
+            else
+            {
+                $usr = User::where('username', $request->username)->first();
+
+                $data = Queue::find($queId);
+        
+                $data->user_id = $usr->id;
+
+                if ($data->save()) {
+                    $request->session()->flash('success', 'Your Queue transfered successful');
+                    return redirect('/'.Auth::user()->username.'/queues');
+                } 
+            }
+        }
+        else {
+            $request->session()->flash('error', 'Please enter a valid username');
+            return redirect()->back();
+        }
+
+
+        
     }
 
     /**
