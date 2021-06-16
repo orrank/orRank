@@ -48,12 +48,12 @@ class UserController extends Controller
 
         if ($data->save()) {
 
-            $request->session()->flash('alert-green', 'New Subject Successfully added...');
+            $request->session()->flash('alert-green', 'User modification added successful...');
             return redirect()->back();
         }
         else
         {
-            $request->session()->flash('alert-red', 'New Subject adding failed. Try again...');
+            $request->session()->flash('alert-red', 'User modification adding failed. Try again...');
             return redirect()->back();
         }
 
