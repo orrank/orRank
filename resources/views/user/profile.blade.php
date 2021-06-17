@@ -160,7 +160,7 @@
 
                                     @forelse($queues as $queue)
                                         <div class=" pt-2">
-                                            <h5 class="font-16 mb-1">{{ $queue->name }}</h5>
+                                            <a href="/{{ $user->username }}/{{ $queue->identifier }}"><h5 class="font-16 mb-1">{{ $queue->name }}</h5></a>
                                             <div class="float-right">
                                                 @if (Auth::user())
                                                     @livewire('components.staring', ['queueId'=> $queue->id])
