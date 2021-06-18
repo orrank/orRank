@@ -131,8 +131,13 @@ class QueueController extends Controller
      * @param  \App\Models\Queue  $queue
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Queue $queue)
+    public function destroy(Request $request, $queId)
     {
-        //
+        $Queue = Queue::find($queId);
+        if($Queue->delete())
+        {
+            $request->session()->flash('success', 'Successfully deleted queue');
+            return redirect('/'.Auth::user()->username.'/queues');
+        }
     }
 }

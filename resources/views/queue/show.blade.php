@@ -180,13 +180,13 @@
                                                 </button>
                                             </div>
                                             <div class="card-body">
-                                                <form action="{{ url('/user:queue:delete') }}" method="post"
+                                                <form action="/queue/delete/{{ $queue->id }}" method="post"
                                                     enctype="multipart/form-data">
                                                     @csrf
                                                     <h5>Are you absolutely sure?</h5>
                                                     <p>This action cannot be undone. This will permanently delete the {{$queue->name}}, rating related data.</p>
 
-                                                    Please type <strong>{{Auth::user()->username}}/{{$queue->identifier}}</strong> to confirm.
+                                                    Please reconsider about <strong>{{Auth::user()->username}}/{{$queue->identifier}}</strong> queue to confirm.
 
                                                     <button style="submit"
                                                         class="btn btn-sm btn-danger float-right ml-3">Delete</button>
