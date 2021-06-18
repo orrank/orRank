@@ -42,6 +42,9 @@ Route::group(['middleware' => 'auth'], function(){
     Route::post('/queue/create', [QueueController::class, 'store']);
 
     Route::post('/queue/transfer/{queId}', [QueueController::class, 'transfer']);
+
+    Route::post('/queue/delete/{queId}', [QueueController::class, 'destroy']);
+
 });
 
 Route::get('/{username}', [UserController::class, 'index']);
