@@ -116,7 +116,7 @@
                     </a>
 
                     <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                    <a href="{{ '/' . Auth::user()->username . '/settings' }}" class="dropdown-item notify-item">
                         <i class="mdi mdi-settings-outline"></i>
                         <span>Settings</span>
                     </a>
@@ -235,10 +235,10 @@
                     <i class="mdi mdi-shield-star-outline"></i>
                     <span> New Rating Queue</span>
                 </a>
-                <a href="/organization/new" class="dropdown-item notify-item">
+                {{-- <a href="/organization/new" class="dropdown-item notify-item">
                     <i class="mdi mdi-shield-home-outline"></i>
                     <span> New Organization</span>
-                </a>
+                </a> --}}
             </div>
         </li>
     </ul>
