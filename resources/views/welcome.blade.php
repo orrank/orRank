@@ -10,9 +10,7 @@
                         or organization
                     </h1>
                     <p class="mx-auto text-white  mt-20 mb-40">
-                        In the history of modern astronomy, there is probably no one
-                        greater leap forward than the building and launch of the space
-                        telescope known as the Hubble.
+                        In the situation you can find your product or service strenths and weaknesses and execute new ideas to improve your product or service.
                     </p>
                 </div>
                 <div class="offset-lg-2 col-lg-5 col-md-12 home-banner-right">
