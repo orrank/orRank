@@ -13,30 +13,31 @@ jobs:
       - name: 🐛 Validate composer.json and composer.lock
         run: composer validate --strict
 
-      - name: 📝 Copy .env
-        run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+      #- name: 📝 Copy .env
+      #  run: php -r "file_exists('.env') || copy('.env.example', '.env');"
 
-      - name: 🔨 Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: 7.3
-          extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite
-          coverage: none
+      #- name: 🔨 Setup PHP
+      #  uses: shivammathur/setup-php@v2
+      #  with:
+      #    php-version: 7.3
+      #    extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite
+      #    coverage: none
 
-      - name: 🔨 Install Composer dependencies
-        run: composer install --prefer-dist --no-interaction --no-suggest
-        
-      - name: 📜 Generate key
-        run: php artisan key:generate
+      #- name: 🔨 Install Composer dependencies
+      #  run: composer install --prefer-dist --no-interaction --no-suggest
 
-      - name: 🔒 Directory Permissions
-        run: chmod -R 777 storage bootstrap/cache
-        
-      - name: 🔨 Laravel configuration Cache clear
-        run: php artisan config:cache
-        
-      - name: 🚀 Execute tests
-        run: vendor/bin/phpunit --verbose
+      #- name: 📜 Generate key
+      #  run: php artisan key:generate
+
+      #- name: 🔒 Directory Permissions
+      #  run: chmod -R 777 storage bootstrap/cache
+
+      #- name: 🔨 Laravel configuration Cache clear
+      #  run: php artisan config:cache
+
+      #- name: 🚀 Execute tests
+      #  run: vendor/bin/phpunit --verbose
+
       #- name: 🔨 Install NPM dependencies Setup Laravel move directory
       #  run: npm install && npm run dev
 
@@ -50,12 +51,10 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: public_html/Laravel/
-      #    exclude: vendor/**
-      #      - vendor/**/*
-      #      - node_modules/**
-      #      - node_modules/**/*
-      #      - .github/**/*
-      #      - .git/**/*
-      #      - public/**/*
-      #      - bootstrap/**
-      #      - bootstrap/**/*
+          exclude: vendor/**
+            - vendor/**/*
+            - node_modules/**/*
+            - .github/**/*
+            - .git/**/*
+            - public/**/*
+            - bootstrap/**/*
