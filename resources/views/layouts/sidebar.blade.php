@@ -20,35 +20,26 @@
                 <li>
                     <a href="{{ '/' . Auth::user()->username . '/queues/' }}">
                         <i class="mdi mdi-invert-colors"></i>
-                        <span class="badge badge-dark badge-pill float-right">2</span>
+                        {{-- <span class="badge badge-dark badge-pill float-right">2</span> --}}
                         <span> Rating Queues</span>
                     </a>
                 </li>
 
-                <li>
+                {{-- <li>
                     <a href="javascript: void(0);" class="waves-effect waves-light">
                         <i class="mdi mdi-layers"></i>
                         <span> Organizations </span>
-                        <span class="menu-arrow"></span>
                     </a>
-                    <ul class="nav-second-level" aria-expanded="false">
-                        <li><a href="admin-sweet-alert2.html">Sweet Alert 2</a></li>
-                        <li><a href="admin-widgets.html">Widgets</a></li>
-                        <li><a href="admin-nestable.html">Nestable List</a></li>
-                        <li><a href="admin-rangeslider.html">Range Slider</a></li>
-                        <li><a href="admin-ratings.html">Ratings</a></li>
-                        <li><a href="admin-animation.html">Animation</a></li>
-                    </ul>
-                </li>
+                </li> --}}
 
                 <li>
-                    <a href="calendar.html" class="waves-effect waves-light">
+                    <a href="#" class="waves-effect waves-light">
                         <i class="mdi mdi-calendar"></i>
                         <span> Calendar </span>
                     </a>
                 </li>
                 <li>
-                    <a href="calendar.html" class="waves-effect waves-light">
+                    <a href="#" class="waves-effect waves-light">
                         <i class="mdi mdi-settings-outline"></i>
                         <span> Settings </span>
                     </a>

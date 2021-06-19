@@ -24,8 +24,8 @@
                             class="mdi mdi-chart-areaspline font-30 widget-icon rounded-circle avatar-title text-primary"></i>
                     </div>
                     <div class="wigdet-one-content">
-                        <p class="m-0 text-uppercase font-weight-bold text-muted" title="Statistics">Statistics</p>
-                        <h2><span data-plugin="counterup">34578</span> <i class="mdi mdi-arrow-up text-success font-24"></i>
+                        <p class="m-0 text-uppercase font-weight-bold text-muted" title="Statistics">Queues</p>
+                        <h2><span data-plugin="counterup">03</span> <i class="mdi mdi-arrow-up text-success font-24"></i>
                         </h2>
                         <p class="text-muted m-0"><span class="font-weight-medium">Last:</span> 30.4k</p>
                     </div>
@@ -41,11 +41,11 @@
                         <i class="mdi mdi-layers font-30 widget-icon rounded-circle avatar-title text-warning"></i>
                     </div>
                     <div class="wigdet-one-content">
-                        <p class="m-0 text-uppercase font-weight-bold text-muted" title="User This Month">User Up
+                        <p class="m-0 text-uppercase font-weight-bold text-muted" title="User This Month">Ratings
                         </p>
-                        <h2><span data-plugin="counterup">52410</span> <i class="mdi mdi-arrow-up text-success font-24"></i>
+                        <h2><span data-plugin="counterup">2410</span> <i class="mdi mdi-arrow-up text-success font-24"></i>
                         </h2>
-                        <p class="text-muted m-0"><span class="font-weight-medium">Last:</span> 40.33k</p>
+                        <p class="text-muted m-0"><span class="font-weight-medium">Last:</span> 10.33k</p>
                     </div>
                 </div>
             </div>
@@ -59,8 +59,8 @@
                         <i class="mdi mdi-av-timer font-30 widget-icon rounded-circle avatar-title text-danger"></i>
                     </div>
                     <div class="wigdet-one-content">
-                        <p class="m-0 text-uppercase font-weight-bold text-muted" title="Statistics">Statistics</p>
-                        <h2><span data-plugin="counterup">6352</span> <i class="mdi mdi-arrow-up text-success font-24"></i>
+                        <p class="m-0 text-uppercase font-weight-bold text-muted" title="Statistics">To do</p>
+                        <h2><span data-plugin="counterup">352</span> <i class="mdi mdi-arrow-up text-success font-24"></i>
                         </h2>
                         <p class="text-muted m-0"><span class="font-weight-medium">Last:</span> 956</p>
                     </div>
@@ -73,10 +73,10 @@
             <div class="card widget-box-one border border-success bg-soft-success">
                 <div class="card-body">
                     <div class="float-right avatar-lg rounded-circle mt-3">
-                        <i class="mdi mdi-account-convert font-30 widget-icon rounded-circle avatar-title text-success"></i>
+                        <i class="mdi mdi-post-outline font-30 widget-icon rounded-circle avatar-title text-success"></i>
                     </div>
                     <div class="wigdet-one-content">
-                        <p class="m-0 text-uppercase font-weight-bold text-muted" title="User Today">User Today</p>
+                        <p class="m-0 text-uppercase font-weight-bold text-muted" title="User Today">Posts</p>
                         <h2><span data-plugin="counterup">895</span> <i class="mdi mdi-arrow-down text-danger font-24"></i>
                         </h2>
                         <p class="text-muted m-0"><span class="font-weight-medium">Last:</span> 1250</p>
