@@ -6,6 +6,11 @@ use Livewire\Component;
 use App\Models\User;
 use App\Models\Follow;
 use Illuminate\Support\Facades\Auth;
+
+use Notification;
+use App\Notifications\Followed;
+
+
 class FollowButton extends Component
 {
     public $fclz, $ficon, $ftxt, $frdId;
@@ -28,6 +33,17 @@ class FollowButton extends Component
 
             if($data->save())
             {
+                $details = [
+                    'subject' => '~'.Auth::user()->username . ' followed you',
+                    'greeting' => 'Hello  👋',
+                    'body' => '~'. Auth::user()->username . ' followed you on OrRank.',
+                    'thanks' => 'Thank you for using OrRank!'
+                ];
+
+                $user = User::where('id', $this->frdId)->get();
+    
+                Notification::send($user, new Followed($details));
+
                 $this->fclz = 'btn-danger';
                 $this->ficon = 'fa-times';
                 $this->ftxt = 'Unfollow';
