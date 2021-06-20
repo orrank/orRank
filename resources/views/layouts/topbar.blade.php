@@ -17,7 +17,7 @@
                     <div class="dropdown-item noti-title">
                         <h5 class="font-16 m-0">
                             <span class="float-right">
-                                <a href="#" class="text-dark">
+                                <a href="/notifications:markAsRead" class="text-dark">
                                     <small>Clear All</small>
                                 </a>
                             </span>Notification
@@ -29,19 +29,20 @@
                         @php $count = 0; @endphp
                         @foreach (auth()->user()->unreadNotifications as $notification)
                             @if ($count < 7)
-                            @if($notification->type == 'App\Notifications\Followed')
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <div class="notify-icon bg-success">
-                                        <i class="mdi mdi-account-plus"></i>
-                                    </div>
-                                    <p class="notify-details">New Follower
-                                        <small
-                                            class="text-muted float-right">{{ $notification->created_at->diffForHumans() }}</small>
-                                        <small class="text-muted">{{ $notification->data['data']['subject'] }}</small>
-                                        
-                                    </p>
-                                </a>
-                                @endif
+                                @if ($notification->type == 'App\Notifications\Followed') <a href="javascript:void(0);" class="dropdown-item
+                                notify-item">
+                                <div class="notify-icon bg-success">
+                                <i class="mdi mdi-account-plus"></i>
+                                </div>
+                                <p class="notify-details">New Follower
+                                <small
+                                class="text-muted
+                                float-right">{{ $notification->created_at->diffForHumans() }}</small>
+                                <small
+                                class="text-muted">{{ $notification->data['data']['subject'] }}</small>
+
+                                </p>
+                                </a> @endif
                             @endif
                             @php $count++; @endphp
                         @endforeach

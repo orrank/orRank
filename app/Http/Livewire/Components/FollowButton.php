@@ -34,7 +34,7 @@ class FollowButton extends Component
             if($data->save())
             {
                 $details = [
-                    'subject' => '~'.Auth::user()->username . ' followed you',
+                    'subject' => '~'.Auth::user()->username . ' has followed you',
                     'greeting' => 'Hello  👋',
                     'body' => '~'. Auth::user()->username . ' followed you on OrRank.',
                     'thanks' => 'Thank you for using OrRank!'
