@@ -6,7 +6,11 @@
                 <a class="nav-link dropdown-toggle  waves-effect" data-toggle="dropdown" href="#" role="button"
                     aria-haspopup="false" aria-expanded="false">
                     <i class="mdi mdi-bell noti-icon"></i>
-                    <span class="badge badge-success rounded-circle noti-icon-badge">4</span>
+                    @if (auth()->user()->unreadNotifications->count('id') == 0)
+                    @else
+                        <span
+                            class="badge badge-success rounded-circle noti-icon-badge">{{ auth()->user()->unreadNotifications->count('id') }}</span>
+                    @endif
                 </a>
                 <div class="dropdown-menu dropdown-menu-right dropdown-lg">
 
@@ -22,48 +26,67 @@
 
                     <div class="slimscroll noti-scroll">
 
+                        @php $count = 0; @endphp
+                        @foreach (auth()->user()->unreadNotifications as $notification)
+                            @if ($count < 7)
+                            @if($notification->type == 'App\Notifications\Followed')
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <div class="notify-icon bg-success">
+                                        <i class="mdi mdi-account-plus"></i>
+                                    </div>
+                                    <p class="notify-details">New Follower
+                                        <small
+                                            class="text-muted float-right">{{ $notification->created_at->diffForHumans() }}</small>
+                                        <small class="text-muted">{{ $notification->data['data']['subject'] }}</small>
+                                        
+                                    </p>
+                                </a>
+                                @endif
+                            @endif
+                            @php $count++; @endphp
+                        @endforeach
                         <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                        {{-- <a href="javascript:void(0);" class="dropdown-item notify-item">
                             <div class="notify-icon bg-success">
                                 <i class="mdi mdi-settings-outline"></i>
                             </div>
                             <p class="notify-details">New settings
                                 <small class="text-muted">There are new settings available</small>
                             </p>
-                        </a>
+                        </a> --}}
 
                         <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                        {{-- <a href="javascript:void(0);" class="dropdown-item notify-item">
                             <div class="notify-icon bg-info">
                                 <i class="mdi mdi-bell-outline"></i>
                             </div>
                             <p class="notify-details">Updates
                                 <small class="text-muted">There are 2 new updates available</small>
                             </p>
-                        </a>
+                        </a> --}}
 
                         <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                        {{-- <a href="javascript:void(0);" class="dropdown-item notify-item">
                             <div class="notify-icon bg-danger">
                                 <i class="mdi mdi-account-plus"></i>
                             </div>
                             <p class="notify-details">New user
                                 <small class="text-muted">You have 10 unread messages</small>
                             </p>
-                        </a>
+                        </a> --}}
 
                         <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                        {{-- <a href="javascript:void(0);" class="dropdown-item notify-item">
                             <div class="notify-icon bg-info">
                                 <i class="mdi mdi-comment-account-outline"></i>
                             </div>
                             <p class="notify-details">Caleb Flakelar commented on Admin
                                 <small class="text-muted">4 days ago</small>
                             </p>
-                        </a>
+                        </a> --}}
 
                         <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                        {{-- <a href="javascript:void(0);" class="dropdown-item notify-item">
                             <div class="notify-icon bg-secondary">
                                 <i class="mdi mdi-heart"></i>
                             </div>
@@ -71,7 +94,7 @@
                                 <b>Admin</b>
                                 <small class="text-muted">13 days ago</small>
                             </p>
-                        </a>
+                        </a> --}}
                     </div>
 
                     <!-- All-->
