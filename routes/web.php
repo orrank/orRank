@@ -45,6 +45,11 @@ Route::group(['middleware' => 'auth'], function(){
 
     Route::post('/queue/delete/{queId}', [QueueController::class, 'destroy']);
 
+    Route::get('/notifications:markAsRead', function(){
+		auth()->user()->unreadNotifications->markAsRead();
+		return redirect()->back();
+	})->name('mark');
+
 });
 
 Route::get('/{username}', [UserController::class, 'index']);
