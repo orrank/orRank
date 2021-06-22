@@ -7,7 +7,7 @@ use App\Models\Rating;
 
 class DeviceStaring extends Component
 {
-    public $queueId, $response, $clz1, $clz2, $clz3, $clz4, $clz5;
+    public $queueId, $response, $clz1, $clz2, $clz3, $clz4, $clz5, $success = false;
 
     public function addStar($score)
     {
@@ -16,8 +16,8 @@ class DeviceStaring extends Component
         $data->queue_id = $this->queueId;
         $data->rate = $score;
         $data->feedback = '';
-        $data->save();    
-
+        $data->save();  
+        
         if($score == 1)
         {
             $this->clz1 = 'yellow';
@@ -58,6 +58,8 @@ class DeviceStaring extends Component
             $this->clz4 = 'yellow';
             $this->clz5 = 'yellow';
         }
+
+        $this->success = true;
 
     }
 

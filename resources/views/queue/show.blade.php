@@ -100,25 +100,45 @@
                     </div>
                     @if (Auth::user()->id == $queue->user_id)
                         <div class="tab-pane" id="setting-b1" role="tabpanel" aria-labelledby="setting-b1-tab">
-                            <h5>General Info</h5>
-                            <hr>
-                            <div class="row">
-                                <div class="col-6">
-                                    <form action="">
-                                        <div class="input-group mt-3">
-                                            <input type="text" id="qname" name="qname" class="form-control"
-                                                value="{{ $queue->name }}" placeholder="Queue Name" required>
-                                            <span class="input-group-append">
-                                                <button type="submit"
-                                                    class="btn waves-effect waves-light btn-dark">Rename</button>
-                                            </span>
+
+                            <div class="card widget-box-one border border-default bg-soft-default">
+                                <div class="card-header bg-light">
+                                    <h3 class="card-title mb-0">Update General Info</h3>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <form action="">
+                                                <label class="mb-0">Queue name</label>
+                                                <div class="input-group mt-1">
+                                                    <input type="text" id="qname" name="qname" class="form-control"
+                                                        value="{{ $queue->name }}" placeholder="Queue Name" required>
+                                                    <span class="input-group-append">
+                                                        <button type="submit"
+                                                            class="btn waves-effect waves-light btn-dark">Rename</button>
+                                                    </span>
+                                                </div>
+                                            </form>
                                         </div>
-                                    </form>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <form action="">
+                                                <br>
+                                                <div class="form-group">
+                                                    <label class="mb-1">Description</label>
+                                                    <textarea name="" class="form-control" rows="4"></textarea>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <h5>Danger Zone</h5>
-                            <hr>
+
                             <div class="card widget-box-one border border-danger bg-soft-danger">
+                                <div class="card-header bg-danger">
+                                    <h3 class="card-title text-white mb-0">Danger Zone</h3>
+                                </div>
                                 <div class="card-body">
                                     <strong>Transfer ownership</strong>
                                     <p>Transfer this queue to another user or to an organization where you have the ability
@@ -184,9 +204,12 @@
                                                     enctype="multipart/form-data">
                                                     @csrf
                                                     <h5>Are you absolutely sure?</h5>
-                                                    <p>This action cannot be undone. This will permanently delete the {{$queue->name}}, rating related data.</p>
+                                                    <p>This action cannot be undone. This will permanently delete the
+                                                        {{ $queue->name }}, rating related data.</p>
 
-                                                    Please reconsider about <strong>{{Auth::user()->username}}/{{$queue->identifier}}</strong> queue to confirm.
+                                                    Please reconsider about
+                                                    <strong>{{ Auth::user()->username }}/{{ $queue->identifier }}</strong>
+                                                    queue to confirm.
 
                                                     <button style="submit"
                                                         class="btn btn-sm btn-danger float-right ml-3">Delete</button>
