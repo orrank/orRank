@@ -25,7 +25,8 @@
                     </div>
                     <div class="wigdet-one-content">
                         <p class="m-0 text-uppercase font-weight-bold text-muted" title="Statistics">Queues</p>
-                        <h2><span data-plugin="counterup">03</span> <i class="mdi mdi-arrow-up text-success font-24"></i>
+                        <h2><span data-plugin="counterup">{{ $queues }}</span> <i
+                                class="mdi mdi-arrow-up text-success font-24"></i>
                         </h2>
                         <p class="text-muted m-0"><span class="font-weight-medium">Last:</span> 30.4k</p>
                     </div>

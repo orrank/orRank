@@ -13,7 +13,7 @@ class UserController extends Controller
 {
     public function dashboard()
     {
-        $queues = Queue::where('user_id', Auth::user()->id)->get();
+        $queues = Queue::where('user_id', Auth::user()->id)->count();
         return view('dashboard', ['queues' => $queues]);
     }
 
