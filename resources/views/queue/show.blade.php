@@ -120,6 +120,22 @@
                                                 </div>
                                             </form>
                                         </div>
+                                        <div class="col-6">
+                                            <form action="">
+                                                <label class="mb-0">Interval <small>milliseconds (1000ms =
+                                                        1second)</small></label>
+                                                <div class="input-group mt-1">
+                                                    <input type="number" max="60000" min="1000" step="1000" id="interval"
+                                                        name="interval" class="form-control"
+                                                        value="{{ $queue->interval }}" placeholder="Queue Interval"
+                                                        required>
+                                                    <span class="input-group-append">
+                                                        <button type="submit"
+                                                            class="btn waves-effect waves-light btn-dark">Update</button>
+                                                    </span>
+                                                </div>
+                                            </form>
+                                        </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12">
@@ -127,7 +143,8 @@
                                                 <br>
                                                 <div class="form-group">
                                                     <label class="mb-1">Description</label>
-                                                    <textarea name="" class="form-control" rows="4"></textarea>
+                                                    <textarea name="" class="form-control"
+                                                        rows="4">{{ $queue->description }}</textarea>
                                                 </div>
                                             </form>
                                         </div>
@@ -210,6 +227,8 @@
                                                     Please reconsider about
                                                     <strong>{{ Auth::user()->username }}/{{ $queue->identifier }}</strong>
                                                     queue to confirm.
+
+                                                    <br><br>
 
                                                     <button style="submit"
                                                         class="btn btn-sm btn-danger float-right ml-3">Delete</button>

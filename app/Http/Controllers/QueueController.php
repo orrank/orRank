@@ -70,6 +70,7 @@ class QueueController extends Controller
         $data->name = $request->qname;
         $data->description = $request->qdescription;
         $data->logo = '';
+        $data->interval = 5000;
         $data->type = $request->Radios;
         $data->user_id = Auth::user()->id;
         
